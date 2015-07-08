@@ -1,3 +1,39 @@
+@keyframes "blink" {
+	from, to {
+		box-shadow: 1px 0 0 0 transparent;
+	}
+	50% {
+		box-shadow: 1px 0 0 0 white;
+	}
+}
+
+@-moz-keyframes blink {
+	from, to {
+		box-shadow: 1px 0 0 0 transparent;
+	}
+	50% {
+		box-shadow: 1px 0 0 0 white;
+	}
+}
+
+@-webkit-keyframes "blink" {
+	from, to {
+		box-shadow: 1px 0 0 0 transparent;
+	}
+	50% {
+		box-shadow: 1px 0 0 0 white;
+	}
+}
+
+@-ms-keyframes "blink" {
+	from, to {
+		box-shadow: 1px 0 0 0 transparent;
+	}
+	50% {
+		box-shadow: 1px 0 0 0 white;
+	}
+}
+
 @font-face {
 	font-family: monospace;
 	font-style: normal;
@@ -44,6 +80,7 @@ main {
 
 #input,
 #highlight,
+#caret,
 #output {
 	font-family: monospace, monospace;
 	font-size: 1rem;
@@ -51,6 +88,7 @@ main {
 	overflow: auto;
 	outline: 0;
 	padding: 1em;
+	-moz-tab-size: 4;
 	tab-size: 4;
 	width: 50%;
 }
@@ -59,16 +97,39 @@ main {
 	background: none;
 	border: 0;
 	box-shadow: inset 0 0 0 .25em rgba(255,255,255,0.05);
-	color: #FFF;
-	-webkit-text-fill-color: transparent;
 }
 
-#highlight {
+#caret,
+#input {
+	color: rgba(255,255,255,0);
+}
+
+#input::selection { background: rgba(179,212,252,.5); color: #FFF; }
+#input::-moz-selection { background: rgba(179,212,252,.5); color: #FFF; }
+
+#highlight,
+#caret {
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
 	z-index: -1;
+}
+
+#cursor {
+	box-shadow: 1px 0 0 0 #FFF;
+	display: inline-block;
+	width: 1px;
+	height: 1.25em;
+	vertical-align: top;
+}
+
+:not([down]) > #cursor {
+	-webkit-animation: 1s blink step-end infinite .25s;
+	-moz-animation: 1s blink step-end infinite .25s;
+	-ms-animation: 1s blink step-end infinite .25s;
+	-o-animation: 1s blink step-end infinite .25s;
+	animation: 1s blink step-end infinite .25s;
 }
 
 .token {
