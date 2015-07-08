@@ -79,7 +79,7 @@ $column: 200px;
 ```css
 /* before */
 
-@each $icon in foo, bar, baz {
+@each $icon in (foo, bar, baz) {
 	.icon-$(icon) {
 		background: url('icons/$(icon).png');
 	}
