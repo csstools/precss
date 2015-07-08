@@ -43,6 +43,13 @@ var processors = [
 		defaults: {
 			someDefaultOption: true
 		}
+	},
+	{
+		plugin: require('autoprefixer-core'),
+		namespace: 'autoprefixer',
+		defaults: {
+			someDefaultOption: true
+		}
 	}
 ];
 
