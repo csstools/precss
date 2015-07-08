@@ -31,7 +31,6 @@ var processors = [
 		}
 	},
 	{
-		// must go after mixins
 		plugin: require('postcss-color-function'),
 		namespace: 'function',
 		defaults: {
