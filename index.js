@@ -17,13 +17,6 @@ var processors = [
 		}
 	},
 	{
-		plugin: require('postcss-nested'),
-		namespace: 'nested',
-		defaults: {
-			someDefaultOption: true
-		}
-	},
-	{
 		plugin: require('postcss-color-function'),
 		namespace: 'function',
 		defaults: {
@@ -40,6 +33,13 @@ var processors = [
 	{
 		plugin: require('postcss-mixins'),
 		namespace: 'simple-vars',
+		defaults: {
+			someDefaultOption: true
+		}
+	},
+	{
+		plugin: require('postcss-nested'),
+		namespace: 'nested',
 		defaults: {
 			someDefaultOption: true
 		}
