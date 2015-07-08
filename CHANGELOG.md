@@ -1,3 +1,7 @@
+## 0.1.2 (2015-07-08)
+
+Updated: Tests to support nested options
+
 ## 0.1.1 (2015-07-08)
 
 Fixed: Re-ordered plugins so they don’t break each other
