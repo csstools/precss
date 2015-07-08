@@ -47,7 +47,7 @@ var processors = [
 ];
 
 // load all plugins
-module.exports = postcss.plugin('sassy', function (options) {
+module.exports = postcss.plugin('precss', function (options) {
 	options = options || {};
 
 	var instance = postcss();

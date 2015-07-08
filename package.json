@@ -1,12 +1,11 @@
 {
-	"name": "postcss-sassy",
-	"version": "0.0.2",
-	"description": "PostCSS plugin sassy",
+	"name": "precss",
+	"version": "0.1.0",
+	"description": "Use variables, mixins, conditionals, and other goodies in your CSS",
 	"keywords": [
 		"postcss",
 		"css",
 		"postcss-plugin",
-		"sassy",
 		"variables",
 		"conditionals",
 		"ifs",
@@ -20,15 +19,15 @@
 		"imports"
 	],
 	"author": "Jonathan Neal <jonathantneal@hotmail.com>",
-	"license": "MIT",
+	"license": "CC0-1.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/jonathantneal/postcss-sassy.git"
+		"url": "https://github.com/jonathantneal/precss.git"
 	},
 	"bugs": {
-		"url": "https://github.com/jonathantneal/postcss-sassy/issues"
+		"url": "https://github.com/jonathantneal/precss/issues"
 	},
-	"homepage": "https://github.com/jonathantneal/postcss-sassy",
+	"homepage": "https://github.com/jonathantneal/precss",
 	"dependencies": {
 		"postcss": "^4.1.16",
 		"postcss-advanced-variables": "0.0.2",
