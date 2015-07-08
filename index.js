@@ -17,13 +17,6 @@ var processors = [
 		}
 	},
 	{
-		plugin: require('postcss-color-function'),
-		namespace: 'function',
-		defaults: {
-			someDefaultOption: true
-		}
-	},
-	{
 		plugin: require('postcss-media-minmax'),
 		namespace: 'minmax',
 		defaults: {
@@ -33,6 +26,13 @@ var processors = [
 	{
 		plugin: require('postcss-mixins'),
 		namespace: 'simple-vars',
+		defaults: {
+			someDefaultOption: true
+		}
+	},
+	{
+		plugin: require('postcss-color-function'),
+		namespace: 'function',
 		defaults: {
 			someDefaultOption: true
 		}
