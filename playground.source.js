@@ -1,4 +1,4 @@
-var sassy = require('./');
+var precss = require('./');
 var prism = require('./playground.prism.js');
 
 var defaultString = location.href.slice(-1) === '#' || location.hash ? location.hash.slice(1).replace(/(\\n|\\r)/g, '\n').replace(/\\t/g, '\t') : '@define-mixin icon $name {\n\tpadding-left: 16px;\n\n\t&::after {\n\t\tcontent: "";\n\t\tbackground-url: url(/icons/$(name).png);\n\t}\n}\n\n$blue: #056ef0;\n$column: 200px;\n\n.search {\n\t@mixin icon search;\n}\n\n.menu {\n\tbackground: $blue;\n\twidth: calc(4 * $column);\n}\n\n.foo {\n\t@if 3 < 5 {\n\t\tbackground: green;\n\t}\n}\n\n@for $i from 10 to 30 by 10 {\n\t.b-$i { width: $(i)px; }\n}\n\n@each $icon in (foo, bar, baz) {\n\t.icon-$(icon) {\n\t\tbackground: url(icons/$icon.png);\n\t}\n}';
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			beforeHTML = Prism.highlight(input.value, Prism.languages.scss);
 
-			buffer = sassy.process(input.value, { safe: true });
+			buffer = precss.process(input.value, { safe: true });
 
 			afterHTML = Prism.highlight(buffer, Prism.languages.scss);
 		} catch (error) {}
