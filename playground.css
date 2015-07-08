@@ -1,0 +1,109 @@
+@font-face {
+	font-family: monospace;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Monaco"), local("Consolas"), local("DejaVu Sans Mono"), local("DejaVu Sans Mono"), local(DejaVuSansMono);
+}
+
+@font-face {
+	font-family: monospace;
+	font-style: italic;
+	font-weight: 400;
+	src: local("Monaco"), local("Consolas Italic"), local(Consolas-Italic), local("DejaVu Sans Mono Oblique"), local(DejaVuSansMono-Oblique);
+}
+
+@font-face {
+	font-family: monospace;
+	font-style: normal;
+	font-weight: 700;
+	src: local("Monaco"), local("Consolas Bold"), local(Consolas-Bold), local("DejaVu Sans Mono Bold"), local(DejaVuSansMono-Bold);
+}
+
+@font-face {
+	font-family: monospace;
+	font-style: italic;
+	font-weight: 700;
+	src: local("Monaco"), local("Consolas Bold Italic"), local(Consolas-BoldItalic), local("DejaVu Sans Mono Bold Oblique"), local(DejaVuSansMono-BoldOblique);
+}
+
+* {
+	box-sizing: inherit;
+	margin: 0;
+}
+
+html {
+	background-color: #1d1f20;
+	box-sizing: border-box;
+	color: #ddca7e;
+}
+
+main {
+	display: flex;
+	position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+}
+
+#input,
+#highlight,
+#output {
+	font-family: monospace, monospace;
+	font-size: 1rem;
+	line-height: 1.25;
+	overflow: auto;
+	outline: 0;
+	padding: 1em;
+	tab-size: 4;
+	width: 50%;
+}
+
+#input {
+	background: none;
+	border: 0;
+	box-shadow: inset 0 0 0 .25em rgba(255,255,255,0.05);
+	color: #FFF;
+	-webkit-text-fill-color: transparent;
+}
+
+#highlight {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+.token {
+	color: #FFF;
+}
+
+.selector {
+	color: #a6dd3c;
+}
+
+.property {
+	color: #56daef;
+	width: calc(100% + 40px);
+}
+
+.function {
+	color: #ddca7e;
+}
+
+.url {
+	color: #a6dd3c;
+}
+
+.string {
+	color: #e5deb8;
+}
+
+.variable {
+	color: #ff9528;
+}
+
+.keyword {
+	color: #ff3471;
+}
+
+.number {
+	color: #ac8bfd;
+}
