@@ -9,7 +9,7 @@ var processors = [
 	},
 	{
 		plugin: require('postcss-advanced-variables'),
-		namespace: 'simple-vars',
+		namespace: 'variables',
 		defaults: {}
 	},
 	{
@@ -19,12 +19,12 @@ var processors = [
 	},
 	{
 		plugin: require('postcss-mixins'),
-		namespace: 'simple-vars',
+		namespace: 'mixins',
 		defaults: {}
 	},
 	{
 		plugin: require('postcss-color-function'),
-		namespace: 'function',
+		namespace: 'color',
 		defaults: {}
 	},
 	{
