@@ -1,3 +1,8 @@
+## 0.1.3 (2015-07-08)
+
+Added: Support for @else statements
+Updated: Dependencies
+
 ## 0.1.2 (2015-07-08)
 
 Updated: Tests to support nested options
