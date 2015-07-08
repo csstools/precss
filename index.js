@@ -5,44 +5,32 @@ var processors = [
 	{
 		plugin: require('postcss-import'),
 		namespace: 'import',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-advanced-variables'),
 		namespace: 'simple-vars',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-media-minmax'),
 		namespace: 'minmax',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-mixins'),
 		namespace: 'simple-vars',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-color-function'),
 		namespace: 'function',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-nested'),
 		namespace: 'nested',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	}
 ];
 
