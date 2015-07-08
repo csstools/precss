@@ -97,6 +97,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	input.value = defaultString;
 
 	update();
-
-	input.focus();
 });
