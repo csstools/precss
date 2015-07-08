@@ -10,7 +10,7 @@ var processors = [
 		}
 	},
 	{
-		plugin: require('postcss-simple-vars'),
+		plugin: require('postcss-advanced-variables'),
 		namespace: 'simple-vars',
 		defaults: {
 			someDefaultOption: true
@@ -19,27 +19,6 @@ var processors = [
 	{
 		plugin: require('postcss-nested'),
 		namespace: 'nested',
-		defaults: {
-			someDefaultOption: true
-		}
-	},
-	{
-		plugin: require('postcss-conditionals'),
-		namespace: 'conditionals',
-		defaults: {
-			someDefaultOption: true
-		}
-	},
-	{
-		plugin: require('postcss-for'),
-		namespace: 'for',
-		defaults: {
-			someDefaultOption: true
-		}
-	},
-	{
-		plugin: require('postcss-each'),
-		namespace: 'each',
 		defaults: {
 			someDefaultOption: true
 		}

@@ -30,12 +30,10 @@
 	},
 	"homepage": "https://github.com/jonathantneal/postcss-sassy",
 	"dependencies": {
-		"postcss": "^4.1.13",
+		"postcss": "^4.1.16",
+		"postcss-advanced-variables": "0.0.2",
 		"postcss-color-function": "^1.3.0",
-		"postcss-conditionals": "^1.2.0",
-		"postcss-each": "^0.3.0",
-		"postcss-for": "git+https://github.com/xori/postcss-for.git",
-		"postcss-import": "^6.0.0",
+		"postcss-import": "^6.1.1",
 		"postcss-media-minmax": "^1.2.0",
 		"postcss-mixins": "^0.3.0",
 		"postcss-nested": "^0.3.2",
@@ -44,7 +42,7 @@
 	"devDependencies": {
 		"chai": "^3.0.0",
 		"gulp": "^3.9.0",
-		"gulp-eslint": "^0.14.0",
+		"gulp-eslint": "^0.15.0",
 		"gulp-mocha": "^2.1.2"
 	},
 	"scripts": {
