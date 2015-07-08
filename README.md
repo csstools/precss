@@ -1,6 +1,6 @@
 # PreCSS [![Build Status][ci-img]][ci]
 
-<img align="right" width="150" height="150" src="https://i.imgur.com/sYn3v5b.png" alt="">
+<img align="right" width="150" height="150" src="https://i.imgur.com/zxxN3OX.png" alt="">
 
 [PreCSS] is a tool that allows you to use Sass-like markup in your CSS files.
 
