@@ -1,6 +1,6 @@
 # PreCSS [![Build Status][ci-img]][ci]
 
-<img align="right" width="135" height="95" src="https://i.imgur.com/eeyEtx2.png" alt="">
+<img align="right" width="200" height="200" src="https://i.imgur.com/eeyEtx2.png" alt="">
 
 [PreCSS] is a tool that allows you to use preprocessor-like markup in your CSS files.
 
