@@ -43,18 +43,11 @@ var processors = [
 		defaults: {
 			someDefaultOption: true
 		}
-	},
-	{
-		plugin: require('autoprefixer-core'),
-		namespace: 'autoprefixer',
-		defaults: {
-			someDefaultOption: true
-		}
 	}
 ];
 
 // load all plugins
-module.exports = postcss.plugin('sassy', function (options) {
+module.exports = postcss.plugin('precss', function (options) {
 	options = options || {};
 
 	var instance = postcss();

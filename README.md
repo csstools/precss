@@ -1,10 +1,10 @@
-# PostCSS Sassy [![Build Status][ci-img]][ci]
+# PreCSS [![Build Status][ci-img]][ci]
 
-<img align="right" width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
+<img align="right" width="135" height="95" src="https://i.imgur.com/eeyEtx2.png" alt="">
 
-[PostCSS Sassy] is a [PostCSS] plugin pack that allows you to use [Sass]-like markup in your CSS files.
+[PreCSS] is a tool that allows you to use preprocessor-like markup in your CSS files.
 
-The Sass syntax allows you to use variables, mixins, conditionals, and other goodies.
+The syntax allows you to use variables, mixins, conditionals, and other goodies.
 
 ### Variables
 
@@ -138,19 +138,19 @@ body { background: black; }
 
 ## Usage
 
-You just need to follow these two steps to use [PostCSS Sassy]:
+You just need to follow these two steps to use [PreCSS]:
 
 1. Add [PostCSS] to your build tool.
-2. Add [PostCSS Sassy] as a PostCSS process.
+2. Add [PreCSS] as a PostCSS process.
 
 ```sh
-npm install postcss-sassy --save-dev
+npm install precss --save-dev
 ```
 
 ### Node
 
 ```js
-postcss([ require('postcss-sassy')({ /* options */ }) ])
+postcss([ require('precss')({ /* options */ }) ])
 ```
 
 ### Grunt
@@ -158,10 +158,10 @@ postcss([ require('postcss-sassy')({ /* options */ }) ])
 Add [Grunt PostCSS] to your build tool:
 
 ```sh
-npm install postcss-sassy --save-dev
+npm install precss --save-dev
 ```
 
-Enable [PostCSS Sassy] within your Gruntfile:
+Enable [PreCSS] within your Gruntfile:
 
 ```js
 grunt.loadNpmTasks('grunt-postcss');
@@ -170,7 +170,7 @@ grunt.initConfig({
 	postcss: {
 		options: {
 			processors: [
-				require('postcss-sassy')({ /* options */ })
+				require('precss')({ /* options */ })
 			]
 		},
 		dist: {
@@ -180,17 +180,12 @@ grunt.initConfig({
 });
 ```
 
-## Differences between Sassy and Sass
-
-...
-
 ### Options
 
 ...
 
-[ci]: https://travis-ci.org/jonathantneal/postcss-sassy
-[ci-img]: https://travis-ci.org/jonathantneal/postcss-sassy.svg
+[ci]: https://travis-ci.org/jonathantneal/precss
+[ci-img]: https://travis-ci.org/jonathantneal/precss.svg
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
 [PostCSS]: https://github.com/postcss/postcss
-[PostCSS Sassy]: https://github.com/jonathantneal/postcss-sassy
-[Sass]: http://sass-lang.com/
+[PreCSS]: https://github.com/jonathantneal/precss
