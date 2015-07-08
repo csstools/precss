@@ -89,6 +89,7 @@ main {
 	overflow: auto;
 	outline: 0;
 	padding: 1em;
+	resize: none;
 	-moz-tab-size: 4;
 	tab-size: 4;
 	width: 50%;
