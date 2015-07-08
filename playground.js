@@ -15148,7 +15148,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	input.addEventListener('scroll', onscroll);
 
-	input.addEventListener('focus', oncaretchange);
+	input.addEventListener('focus', function () {
+		caret.setAttribute('focus', '');
+		oncaretchange();
+	});
+
+	input.addEventListener('blur', function () {
+		caret.removeAttribute('focus');
+	});
+
 	input.addEventListener('mousedown', function () {
 		caret.setAttribute('down', '');
 		setTimeout(oncaretchange);

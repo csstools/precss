@@ -118,10 +118,14 @@ main {
 
 #cursor {
 	box-shadow: 1px 0 0 0 #FFF;
-	display: inline-block;
+	display: none;
 	width: 1px;
 	height: 1.25em;
 	vertical-align: top;
+}
+
+[focus] > #cursor {
+	display: inline-block;
 }
 
 :not([down]) > #cursor {
