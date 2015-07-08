@@ -255,7 +255,7 @@ describe('postcss-mixins', function () {
 	it('uses variable', function (done) {
 		test(
 			'$other: red; ' +
-			'@define-mixin color $color { '+
+			'@define-mixin color $color { ' +
 				'color: $color; ' +
 				'background-color: $other; ' +
 			'} ' +
