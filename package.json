@@ -1,7 +1,7 @@
 {
 	"name": "precss",
 	"version": "0.1.0",
-	"description": "Use variables, mixins, conditionals, and other goodies in your CSS",
+	"description": "Use Sass-like markup in your CSS",
 	"keywords": [
 		"postcss",
 		"css",

@@ -2,9 +2,9 @@
 
 <img align="right" width="150" height="150" src="https://i.imgur.com/eeyEtx2.png" alt="">
 
-[PreCSS] is a tool that allows you to use preprocessor-like markup in your CSS files.
+[PreCSS] is a tool that allows you to use Sass-like markup in your CSS files.
 
-The syntax allows you to use variables, mixins, conditionals, and other goodies.
+Enjoy a familiar syntax with variables, mixins, conditionals, and other goodies.
 
 ### Variables
 
