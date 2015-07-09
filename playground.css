@@ -4,28 +4,28 @@
 	font-family: monospace;
 	font-style: normal;
 	font-weight: 400;
-	src: local("Monaco"), local("Consolas"), local("DejaVu Sans Mono"), local("DejaVu Sans Mono"), local(DejaVuSansMono);
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas"), local("DejaVu Sans Mono"), local("DejaVu Sans Mono"), local(DejaVuSansMono);
 }
 
 @font-face {
 	font-family: monospace;
 	font-style: italic;
 	font-weight: 400;
-	src: local("Monaco"), local("Consolas Italic"), local(Consolas-Italic), local("DejaVu Sans Mono Oblique"), local(DejaVuSansMono-Oblique);
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas Italic"), local(Consolas-Italic), local("DejaVu Sans Mono Oblique"), local(DejaVuSansMono-Oblique);
 }
 
 @font-face {
 	font-family: monospace;
 	font-style: normal;
 	font-weight: 700;
-	src: local("Monaco"), local("Consolas Bold"), local(Consolas-Bold), local("DejaVu Sans Mono Bold"), local(DejaVuSansMono-Bold);
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas Bold"), local(Consolas-Bold), local("DejaVu Sans Mono Bold"), local(DejaVuSansMono-Bold);
 }
 
 @font-face {
 	font-family: monospace;
 	font-style: italic;
 	font-weight: 700;
-	src: local("Monaco"), local("Consolas Bold Italic"), local(Consolas-BoldItalic), local("DejaVu Sans Mono Bold Oblique"), local(DejaVuSansMono-BoldOblique);
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas Bold Italic"), local(Consolas-BoldItalic), local("DejaVu Sans Mono Bold Oblique"), local(DejaVuSansMono-BoldOblique);
 }
 
 /* animations */
@@ -86,6 +86,10 @@ body {
 }
 
 @media screen and (max-width: 639px) {
+	.pen-ouput {
+		font-size: 75%;
+	}
+
 	.pen-input, .pen-caret, .pen-style {
 		top: 0; right: 0; bottom: 50%; left: 0;
 		width: 100%; height: 50%;
