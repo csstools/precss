@@ -68,13 +68,18 @@ body {
 	box-sizing: border-box;
 	font: 100%/1.25 monospace, monospace;
 	font-size: 100%;
-	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	padding: 2em;
 	position: absolute;
 	-moz-tab-size: 4;
 	tab-size: 4;
 	white-space: pre;
+}
+
+.pen-caret,
+.pen-style,
+.pen-output {
+	overflow: hidden;
 }
 
 .pen-input {
@@ -122,6 +127,7 @@ body {
 	background: none;
 	border: none;
 	margin: 0;
+	overflow: auto;
 	outline: none;
 	resize: none;
 }
