@@ -1,118 +1,203 @@
-var precss = require('./');
-var prism = require('./playground.prism.js');
+'use strict';
 
-function fromHash(string) {
-	return decodeURIComponent(string.replace(/\+/g, ' '));
-}
+var plugin = require('./');
+require('./playground.prism.js');
 
-function toHash(string) {
-	return encodeURIComponent(string)
-		.replace(/%20/g, '+')
-		.replace(/%24/g, '$')
-		.replace(/%26/g, '&')
-		.replace(/%3A/g, ':')
-		.replace(/%3B/g, ';')
-		.replace(/%40/g, '@');
-}
+function pen() {
+	// create elements
+	var block  = document.createElement('span');
+	var style  = block.appendChild(document.createElement('span'));
+	var caret  = block.appendChild(document.createElement('span'));
+	var input  = block.appendChild(document.createElement('textarea'));
+	var output = block.appendChild(document.createElement('span'));
+	var symbol = document.createElement('span');
 
-var defaultString = location.href.slice(-1) === '#' || location.hash ? fromHash(location.hash.slice(1)) : '@define-mixin icon $name {\n\tpadding-left: 16px;\n\n\t&::after {\n\t\tcontent: "";\n\t\tbackground-url: url(/icons/$(name).png);\n\t}\n}\n\n$blue: #056ef0;\n$column: 200px;\n\n.search {\n\t@mixin icon search;\n}\n\n.menu {\n\tbackground: color($blue blackness(20%));\n\twidth: calc(4 * $column);\n}\n\n.foo {\n\t@if 3 < 5 {\n\t\tbackground: green;\n\t} @else {\n\t\tbackground: yellow;\n\t}\n}\n\n@for $i from 10 to 30 by 10 {\n\t.b-$i { width: $(i)px; }\n}\n\n@each $icon in (foo, bar, baz) {\n\t.icon-$(icon) {\n\t\tbackground: url(icons/$icon.png);\n\t}\n}';
+	// define input
+	input.setAttribute('wrap', 'off');
+	input.setAttribute('spellcheck', 'false');
 
-document.addEventListener('DOMContentLoaded', function () {
-	var input = document.getElementById('input');
-	var highlight = document.getElementById('highlight');
-	var output = document.getElementById('output');
-	var caret = document.getElementById('caret');
+	// style elements
+	block.className  = 'pen-block';
+	style.className  = 'pen-style';
+	caret.className  = 'pen-caret';
+	input.className  = 'pen-input';
+	output.className = 'pen-output';
+	symbol.className = 'pen-caret-symbol';
 
-	function update() {
-		var buffer = '';
-		var beforeHTML = '';
-		var afterHTML = '';
+	// symbol solidity
+	var symbolIsActive;
 
-		try {
-			oncaretchange();
+	function activateSymbol() {
+		if (!symbolIsActive) {
+			symbol.className += ' is-active';
 
-			beforeHTML = Prism.highlight(input.value, Prism.languages.scss);
-
-			buffer = precss.process(input.value, { safe: true });
-
-			afterHTML = Prism.highlight(buffer, Prism.languages.scss);
-		} catch (error) {}
-
-		highlight.innerHTML = beforeHTML;
-
-		output.innerHTML = afterHTML;
+			symbolIsActive = true;
+		}
 	}
 
+	function deactivateSymbol() {
+		if (symbolIsActive) {
+			symbol.className = symbol.className.replace(' is-active', '');
+
+			symbolIsActive = false;
+		}
+	}
+
+	function removeSymbol() {
+		caret.removeChild(symbol);
+	}
+
+	// focus event
+	function onfocus(event) {
+		oncaretmove();
+	}
+
+	// blur event
+	function onblur(event) {
+		removeSymbol();
+	}
+
+	// keydown event
 	function onkeydown(event) {
-		if (event.keyCode === 9) {
-			event.preventDefault();
+		if (event.keyCode === 9) ontabdown(event);
+		if (event.metaKey && event.keyCode === 83) onsave(event);
 
-			var start = input.selectionStart;
-			var end = input.selectionEnd;
+		// update caret symbol
+		activateSymbol();
 
-			input.value = input.value.substring(0, start) + '\t' + input.value.substring(end);
+		// bind key up event
+		document.addEventListener('keyup', onkeyup);
 
-			input.selectionStart = start + 1;
-			input.selectionEnd = end + 1;
-
-			update();
-		}
+		setTimeout(oncaretmove);
 	}
 
+	// keyup event
+	function onkeyup(event) {
+		// update caret symbol
+		deactivateSymbol();
+
+		// unbind key up event
+		document.removeEventListener('keyup', onkeyup);
+	}
+
+	// pointerdown event
+	function onpointerdown(event) {
+		// update caret symbol
+		activateSymbol();
+
+		// delay caret
+		setTimeout(oncaretmove);
+
+		// bind pointerdown event
+		window.addEventListener('mouseup', onpointerup);
+	}
+
+	// pointerup event
+	function onpointerup(event) {
+		// update caret symbol
+		deactivateSymbol();
+
+		// unbind pointerup event
+		window.removeEventListener('mouseup', onpointerup);
+	}
+
+	// tabdown event
+	function ontabdown(event) {
+		// prevent default action
+		event.preventDefault();
+
+		var start = input.selectionStart;
+
+		// insert tab character
+		input.value = input.value.slice(0, start) +
+			'\t' +
+			input.value.slice(input.selectionEnd);
+
+		// update selection range
+		input.selectionStart = input.selectionEnd = start + 1;
+
+		// dispatch input event
+		oninput();
+	}
+
+	// save event
+	function onsave(event) {
+		// prevent default action
+		event.preventDefault();
+
+		location.hash = toHash(input.value);
+	}
+
+	// scroll event
 	function onscroll() {
-		highlight.scrollTop = input.scrollTop;
+		// match scroll position
+		caret.scrollTop = style.scrollTop = input.scrollTop;
+		caret.scrollLeft = style.scrollLeft = input.scrollLeft;
 	}
 
-	function oncaretchange() {
-		var end = input.selectionEnd;
+	// input event
+	function oninput(event) {
+		oncaretmove();
 
-		caret.innerHTML = input.value.substring(0, end).replace(/</g, '&lt;') + '<div id="cursor"></div>' + input.value.substring(end).replace(/</g, '&lt;');
+		// set input and output
+		var inputValue  = input.value;
+		var outputValue = inputValue;
+
+		// try to process output 
+		try { outputValue = plugin.process(outputValue, { safe: true }); } catch (e) {}
+
+		// set style and output
+		style.innerHTML  = Prism.highlight(inputValue,  Prism.languages.scss);
+		output.innerHTML = Prism.highlight(outputValue, Prism.languages.scss);
 	}
 
-	input.addEventListener('keydown', function (event) {
-		onkeydown(event);
+	// caretmove event
+	function oncaretmove(event) {
+		// remove caret elements
+		while (caret.lastChild) caret.removeChild(caret.lastChild);
 
-		if (event.ctrlKey && event.keyCode === 83) {
-			location.hash = toHash(input.value);
-		}
+		// set selection point
+		var selectionPoint = input.selectionDirection === 'backward' ? input.selectionStart : input.selectionEnd;
 
-		caret.setAttribute('down', '');
+		// append content before selection point
+		caret.appendChild(document.createTextNode(input.value.slice(0, selectionPoint)));
 
-		setTimeout(oncaretchange);
+		// conditionally append caret symbol
+		if (document.activeElement === input) caret.appendChild(symbol);
 
-		function onkeyup() {
-			caret.removeAttribute('down');
+		// append content after selection point
+		caret.appendChild(document.createTextNode(input.value.slice(selectionPoint)));
+	}
 
-			input.removeEventListener('keyup', onkeyup);
-		}
+	function fromHash(string) {
+		return decodeURIComponent(string.replace(/\+/g, ' '));
+	}
 
-		window.addEventListener('keyup', onkeyup);
-	});
+	function toHash(string) {
+		return encodeURIComponent(string)
+			.replace(/%20/g, '+')
+			.replace(/%24/g, '$')
+			.replace(/%26/g, '&')
+			.replace(/%3A/g, ':')
+			.replace(/%3B/g, ';')
+			.replace(/%40/g, '@');
+	}
 
-	input.addEventListener('input', update);
-
+	// bind events
+	input.addEventListener('focus', onfocus);
+	input.addEventListener('keydown', onkeydown);
+	input.addEventListener('input', oninput);
+	input.addEventListener('mousedown', onpointerdown);
 	input.addEventListener('scroll', onscroll);
 
-	input.addEventListener('focus', function () {
-		caret.setAttribute('focus', '');
-		oncaretchange();
-	});
+	// set value
+	input.value = location.href.slice(-1) === '#' || location.hash ? fromHash(location.hash.slice(1)) : '@define-mixin icon $name {\n\tpadding-left: 16px;\n\n\t&::after {\n\t\tcontent: "";\n\t\tbackground-url: url(/icons/$(name).png);\n\t}\n}\n\n$blue: #056ef0;\n$column: 200px;\n\n.search {\n\t@mixin icon search;\n}\n\n.menu {\n\tbackground: color($blue blackness(20%));\n\twidth: calc(4 * $column);\n}\n\n.foo {\n\t@if 3 < 5 {\n\t\tbackground: green;\n\t} @else {\n\t\tbackground: yellow;\n\t}\n}\n\n@for $i from 10 to 30 by 10 {\n\t.b-$i { width: $(i)px; }\n}\n\n@each $icon in (foo, bar, baz) {\n\t.icon-$(icon) {\n\t\tbackground: url(icons/$icon.png);\n\t}\n}';
 
-	input.addEventListener('blur', function () {
-		caret.removeAttribute('focus');
-	});
+	oninput();
 
-	input.addEventListener('mousedown', function () {
-		caret.setAttribute('down', '');
-		setTimeout(oncaretchange);
+	// append element
+	document.body.appendChild(block);
+}
 
-		window.addEventListener('mouseup', function () {
-			caret.removeAttribute('down');
-			setTimeout(oncaretchange);
-		});
-	});
-
-	input.value = defaultString;
-
-	update();
-});
+// run
+pen();

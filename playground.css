@@ -1,38 +1,4 @@
-@keyframes "blink" {
-	from, to {
-		box-shadow: 1px 0 0 0 transparent;
-	}
-	50% {
-		box-shadow: 1px 0 0 0 white;
-	}
-}
-
-@-moz-keyframes blink {
-	from, to {
-		box-shadow: 1px 0 0 0 transparent;
-	}
-	50% {
-		box-shadow: 1px 0 0 0 white;
-	}
-}
-
-@-webkit-keyframes "blink" {
-	from, to {
-		box-shadow: 1px 0 0 0 transparent;
-	}
-	50% {
-		box-shadow: 1px 0 0 0 white;
-	}
-}
-
-@-ms-keyframes "blink" {
-	from, to {
-		box-shadow: 1px 0 0 0 transparent;
-	}
-	50% {
-		box-shadow: 1px 0 0 0 white;
-	}
-}
+/* typography */
 
 @font-face {
 	font-family: monospace;
@@ -62,115 +28,151 @@
 	src: local("Monaco"), local("Consolas Bold Italic"), local(Consolas-BoldItalic), local("DejaVu Sans Mono Bold Oblique"), local(DejaVuSansMono-BoldOblique);
 }
 
-* {
-	box-sizing: inherit;
+/* animations */
+
+@-webkit-keyframes blink {
+	20% { background-color: rgba(255,255,255,1); }
+	50% { background-color: rgba(255,255,255,0); }
+	80% { background-color: rgba(255,255,255,1); }
+}
+
+@keyframes blink {
+	20% { background-color: rgba(255,255,255,1); }
+	50% { background-color: rgba(255,255,255,0); }
+	80% { background-color: rgba(255,255,255,1); }
+}
+
+/* base */
+
+html {
+	overflow: hidden;
+}
+
+body {
 	margin: 0;
 }
 
-html {
-	background-color: #1d1f20;
-	box-sizing: border-box;
+/* pen styles */
+
+.pen-block {
+	background: #1d1f20;
 	color: #ddca7e;
+	position: fixed;
+	width: 100%; height: 100%;
 }
 
-main {
-	display: -webkit-flex;
-	display: flex;
-	position: fixed; top: 0; right: 0; bottom: 0; left: 0;
-}
-
-#input,
-#highlight,
-#caret,
-#output {
-	font-family: monospace, monospace;
-	font-size: 1rem;
-	line-height: 1.25;
+.pen-input,
+.pen-caret,
+.pen-style,
+.pen-output {
+	box-sizing: border-box;
+	font: 100%/1.25 monospace, monospace;
+	font-size: 100%;
 	overflow: auto;
-	outline: 0;
-	padding: 1em;
-	resize: none;
+	-webkit-overflow-scrolling: touch;
+	padding: 2em;
+	position: absolute;
 	-moz-tab-size: 4;
 	tab-size: 4;
-	width: 50%;
+	white-space: pre;
 }
 
-#input {
+.pen-input {
+	box-shadow: inset .125em 0 0 .5em rgba(255,255,255,0.05);
+}
+
+.pen-output {
+	box-shadow: inset -.125em 0 0 .5em rgba(255,255,255,0.05);
+}
+
+@media screen and (max-width: 639px) {
+	.pen-input, .pen-caret, .pen-style {
+		top: 0; right: 0; bottom: 50%; left: 0;
+		width: 100%; height: 50%;
+	}
+
+	.pen-output {
+		top: 50%; right: 0; bottom: 0; left: 0;
+		width: 100%; height: 50%;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.pen-input, .pen-caret, .pen-style {
+		top: 0; right: 50%; bottom: 0; left: 0;
+		width: 50%; height: 100%;
+	}
+
+	.pen-output {
+		top: 0; right: 0; bottom: 0; left: 50%;
+		width: 50%; height: 100%;
+	}
+}
+
+.pen-input,
+.pen-caret {
+	color: transparent;
+}
+
+.pen-input {
 	background: none;
-	border: 0;
-	box-shadow: inset 0 0 0 .25em rgba(255,255,255,0.05);
+	border: none;
+	outline: none;
+	resize: none;
 }
 
-#caret,
-#input {
-	color: rgba(255,255,255,0);
+.pen-input::-moz-selection {
+	background: rgba(179,212,252,.25);
+	color: #FFF;
 }
 
-#input::selection { background: rgba(179,212,252,.5); color: #FFF; }
-#input::-moz-selection { background: rgba(179,212,252,.5); color: #FFF; }
-
-#highlight,
-#caret {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	z-index: -1;
+.pen-input::selection {
+	background: rgba(179,212,252,.25);
+	color: #FFF;
 }
 
-#cursor {
-	box-shadow: 1px 0 0 0 #FFF;
-	display: none;
-	width: 1px;
-	height: 1.25em;
-	vertical-align: top;
-}
-
-[focus] > #cursor {
+.pen-caret-symbol {
 	display: inline-block;
+	height: 1.25em; width: 1px;
+	background-color: rgba(255,255,255,1);
+	position: absolute;
 }
 
-:not([down]) > #cursor {
-	-webkit-animation: 1s blink step-end infinite .25s;
-	-moz-animation: 1s blink step-end infinite .25s;
-	-ms-animation: 1s blink step-end infinite .25s;
-	-o-animation: 1s blink step-end infinite .25s;
-	animation: 1s blink step-end infinite .25s;
+.pen-caret-symbol:not(.is-active) {
+	-webkit-animation: 1s .25s infinite blink;
+	        animation: 1s .25s infinite blink;
 }
+
+/* token styles */
 
 .token {
 	color: #FFF;
 }
 
-.selector {
+.token.selector {
 	color: #a6dd3c;
 }
 
-.property {
+.token.property {
 	color: #56daef;
-	width: calc(100% + 40px);
 }
 
-.function {
+.token.function {
 	color: #ddca7e;
 }
 
-.url {
+.token.url {
 	color: #a6dd3c;
 }
 
-.string {
+.token.string {
 	color: #e5deb8;
 }
 
-.variable {
+.token.variable {
 	color: #ff9528;
 }
 
-.keyword {
+.token.keyword {
 	color: #ff3471;
-}
-
-.number {
-	color: #ac8bfd;
 }
