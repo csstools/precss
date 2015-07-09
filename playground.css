@@ -121,6 +121,7 @@ body {
 .pen-input {
 	background: none;
 	border: none;
+	margin: 0;
 	outline: none;
 	resize: none;
 }
