@@ -24,6 +24,19 @@ function pen() {
 	output.className = 'pen-output';
 	symbol.className = 'pen-caret-symbol';
 
+	// setImmediate
+	function setImmediate(callback) {
+		function onmessage() {
+			callback();
+
+			window.removeEventListener('message', onmessage);
+		}
+
+		window.addEventListener('message', onmessage);
+
+		window.postMessage('*', '*');
+	}
+
 	// symbol solidity
 	var symbolIsActive;
 
@@ -68,7 +81,7 @@ function pen() {
 		// bind key up event
 		document.addEventListener('keyup', onkeyup);
 
-		setTimeout(oncaretmove);
+		setImmediate(oncaretmove);
 	}
 
 	// keyup event
@@ -86,7 +99,7 @@ function pen() {
 		activateSymbol();
 
 		// delay caret
-		setTimeout(oncaretmove);
+		setImmediate(oncaretmove);
 
 		// bind pointerdown event
 		window.addEventListener('mouseup', onpointerup);
