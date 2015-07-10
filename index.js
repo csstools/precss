@@ -31,6 +31,11 @@ var processors = [
 		plugin: require('postcss-nested'),
 		namespace: 'nested',
 		defaults: {}
+	},
+	{
+		plugin: require('postcss-sass-extend'),
+		namespace: 'extend',
+		defaults: {}
 	}
 ];
 
