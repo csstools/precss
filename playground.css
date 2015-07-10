@@ -81,6 +81,11 @@ body {
 	overflow: hidden;
 }
 
+.pen-input,
+.pen-output {
+	overflow: auto;
+}
+
 .pen-input {
 	box-shadow: inset .125em 0 0 .5em rgba(255,255,255,0.05);
 }
@@ -127,7 +132,6 @@ body {
 	background: none;
 	border: none;
 	margin: 0;
-	overflow: auto;
 	outline: none;
 	resize: none;
 	text-shadow: none;
