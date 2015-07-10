@@ -464,7 +464,7 @@ Prism.languages.scss = Prism.languages.extend('css', {
 });
 
 Prism.languages.insertBefore('scss', 'atrule', {
-	'keyword': /@(if|else if|else|for|each|while|import|extend|debug|define-mixin|warn|mixin|include|function|return|content)/i
+	'keyword': /@(if|else if|else|for|each|while|import|extend|debug|define-extend|define-mixin|warn|mixin|include|function|return|content)/i
 });
 
 Prism.languages.insertBefore('scss', 'property', {
