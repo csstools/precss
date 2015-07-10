@@ -33,7 +33,7 @@ var processors = [
 		defaults: {}
 	},
 	{
-		plugin: require('postcss-sass-extend'),
+		plugin: require('postcss-simple-extend'),
 		namespace: 'extend',
 		defaults: {}
 	}

@@ -301,18 +301,18 @@ describe('postcss-minmax', function() {
 describe('postcss-sass-extend', function() {
 	it('supports extend', function (done) {
 		test(
-			'%black-color { ' +
+			'@define-extend black-color { ' +
 				'color: black; ' +
 			'} ' +
 			'.a { ' +
-				'@extend %black-color; ' +
+				'@extend black-color; ' +
 			'} ' +
 			'.b { ' +
-				'@extend %black-color; ' +
+				'@extend black-color; ' +
 			'}',
 
-			'.a, .b { ' +
-				'color: black; ' +
+			'.a,\n.b { ' +
+				'color: black;\n' +
 			'} ' +
 			'.a { ' +
 			'} ' +

@@ -40,6 +40,7 @@
 		"postcss-mixins": "^0.3.0",
 		"postcss-nested": "^0.3.2",
 		"postcss-sass-extend": "0.0.1",
+		"postcss-simple-extend": "^0.3.1",
 		"postcss-simple-vars": "^0.3.0"
 	},
 	"devDependencies": {
