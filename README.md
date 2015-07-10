@@ -56,6 +56,8 @@ $column: 200px;
 }
 ```
 
+### Loops
+
 ```css
 /* before */
 
