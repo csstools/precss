@@ -297,3 +297,31 @@ describe('postcss-minmax', function() {
 		test('@media screen and (500px <= device-width <= 1200px) {}', '@media screen and (min-device-width: 500px) and (max-device-width: 1200px) {}', {}, done);
 	});
 });
+
+describe('postcss-sass-extend', function() {
+	it('supports extend', function (done) {
+		test(
+			'%black-color { ' +
+				'color: black; ' +
+			'} ' +
+			'.a { ' +
+				'@extend %black-color; ' +
+			'} ' +
+			'.b { ' +
+				'@extend %black-color; ' +
+			'}',
+
+			'.a, .b { ' +
+				'color: black; ' +
+			'} ' +
+			'.a { ' +
+			'} ' +
+			'.b { ' +
+			'}',
+
+			{},
+
+			done
+		);
+	});
+});
