@@ -5,51 +5,42 @@ var processors = [
 	{
 		plugin: require('postcss-import'),
 		namespace: 'import',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-advanced-variables'),
-		namespace: 'simple-vars',
-		defaults: {
-			someDefaultOption: true
-		}
+		namespace: 'variables',
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-media-minmax'),
 		namespace: 'minmax',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-mixins'),
-		namespace: 'simple-vars',
-		defaults: {
-			someDefaultOption: true
-		}
+		namespace: 'mixins',
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-color-function'),
-		namespace: 'function',
-		defaults: {
-			someDefaultOption: true
-		}
+		namespace: 'color',
+		defaults: {}
 	},
 	{
 		plugin: require('postcss-nested'),
 		namespace: 'nested',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-sass-extend'),
+		namespace: 'extend',
+		defaults: {}
 	},
 	{
 		plugin: require('autoprefixer-core'),
 		namespace: 'autoprefixer',
-		defaults: {
-			someDefaultOption: true
-		}
+		defaults: {}
 	}
 ];
 

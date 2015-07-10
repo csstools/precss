@@ -211,7 +211,7 @@ function pen() {
 	input.addEventListener('touchstart', ontouchstart);
 
 	// set value
-	input.value = location.href.slice(-1) === '#' || location.hash ? fromHash(location.hash.slice(1)) : '@define-mixin icon $name {\n\tpadding-left: 16px;\n\n\t&::after {\n\t\tcontent: "";\n\t\tbackground-url: url(/icons/$(name).png);\n\t}\n}\n\n$blue: #056ef0;\n$column: 200px;\n\n.search {\n\t@mixin icon search;\n}\n\n.menu {\n\tbackground: color($blue blackness(20%));\n\twidth: calc(4 * $column);\n}\n\n.foo {\n\t@if 3 < 5 {\n\t\tbackground: green;\n\t} @else {\n\t\tbackground: yellow;\n\t}\n}\n\n@for $i from 10 to 30 by 10 {\n\t.b-$i { width: $(i)px; }\n}\n\n@each $icon in (foo, bar, baz) {\n\t.icon-$(icon) {\n\t\tbackground: url(icons/$icon.png);\n\t}\n}';
+	input.value = location.href.slice(-1) === '#' || location.hash ? fromHash(location.hash.slice(1)) : '$blue: #056ef0;\n$column: 200px;\n\n@define-mixin icon $name {\n\tpadding-left: 16px;\n\n\t&::after {\n\t\tcontent: "";\n\t\tbackground-url: url(/icons/$(name).png);\n\t}\n}\n\n%bg-green {\n\tbackground: green;\n}\n\n%bg-yellow {\n\tbackground: yellow;\n}\n\n.search {\n\t@mixin icon search;\n\n\t@extend %bg-green;\n}\n\n.menu {\n\tbackground: color($blue blackness(20%));\n\twidth: calc(4 * $column);\n}\n\n.foo {\n\t@if 3 < 5 {\n\t\t@extend %bg-green;\n\t} @else {\n\t\t@extend %bg-yellow;\n\t}\n}\n\n@for $i from 10 to 30 by 10 {\n\t.b-$i { width: $(i)px; }\n}\n\n@each $icon in (foo, bar, baz) {\n\t.icon-$(icon) {\n\t\tbackground: url(icons/$icon.png);\n\t}\n}';
 
 	oninput();
 

@@ -208,8 +208,10 @@ describe('postcss-mixins', function () {
 	it('supports functions mixins', function (done) {
 		test('a { @mixin color black; }', 'a { color: black; }', {
 			mixins: {
-				color: function (rule, color) {
-					rule.replaceWith({ prop: 'color', value: color });
+				mixins: {
+					color: function (rule, color) {
+						rule.replaceWith({ prop: 'color', value: color });
+					}
 				}
 			}
 		}, done);
@@ -218,7 +220,9 @@ describe('postcss-mixins', function () {
 	it('removes mixin at-rule', function (done) {
 		test('a { @mixin none; }', 'a { }', {
 			mixins: {
-				none: function () { }
+				mixins: {
+					none: function () { }
+				}
 			}
 		}, done);
 	});
@@ -226,8 +230,10 @@ describe('postcss-mixins', function () {
 	it('converts object from function to nodes', function (done) {
 		test('a { @mixin color black; }', 'a { color: black; }', {
 			mixins: {
-				color: function (rule, color) {
-					return { color: color };
+				mixins: {
+					color: function (rule, color) {
+						return { color: color };
+					}
 				}
 			}
 		}, done);
@@ -237,10 +243,12 @@ describe('postcss-mixins', function () {
 		test('@mixin obj;',
 			'@media screen {\n    b {\n        one: 1\n    }\n}', {
 			mixins: {
-				obj: {
-					'@media screen': {
-						'b': {
-							one: 1
+				mixins: {
+					obj: {
+						'@media screen': {
+							'b': {
+								one: 1
+							}
 						}
 					}
 				}
@@ -287,5 +295,33 @@ describe('postcss-mixins', function () {
 describe('postcss-minmax', function() {
 	it('supports mixin transform', function (done) {
 		test('@media screen and (500px <= device-width <= 1200px) {}', '@media screen and (min-device-width: 500px) and (max-device-width: 1200px) {}', {}, done);
+	});
+});
+
+describe('postcss-sass-extend', function() {
+	it('supports extend', function (done) {
+		test(
+			'%black-color { ' +
+				'color: black; ' +
+			'} ' +
+			'.a { ' +
+				'@extend %black-color; ' +
+			'} ' +
+			'.b { ' +
+				'@extend %black-color; ' +
+			'}',
+
+			'.a, .b { ' +
+				'color: black; ' +
+			'} ' +
+			'.a { ' +
+			'} ' +
+			'.b { ' +
+			'}',
+
+			{},
+
+			done
+		);
 	});
 });

@@ -1,51 +1,52 @@
 {
-  "name": "precss",
-  "version": "0.1.0",
-  "description": "Use variables, mixins, conditionals, and other goodies in your CSS",
-  "keywords": [
-    "postcss",
-    "css",
-    "postcss-plugin",
-    "variables",
-    "conditionals",
-    "ifs",
-    "thens",
-    "elses",
-    "fors",
-    "nesteds",
-    "nestings",
-    "eaches",
-    "mixins",
-    "imports"
-  ],
-  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
-  "license": "CC0-1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jonathantneal/precss.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jonathantneal/precss/issues"
-  },
-  "homepage": "https://github.com/jonathantneal/precss",
-  "dependencies": {
-    "autoprefixer-core": "^5.2.1",
-    "postcss": "^4.1.16",
-    "postcss-advanced-variables": "0.0.2",
-    "postcss-color-function": "^1.3.0",
-    "postcss-import": "^6.1.1",
-    "postcss-media-minmax": "^1.2.0",
-    "postcss-mixins": "^0.3.0",
-    "postcss-nested": "^0.3.2",
-    "postcss-simple-vars": "^0.3.0"
-  },
-  "devDependencies": {
-    "chai": "^3.0.0",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^0.15.0",
-    "gulp-mocha": "^2.1.2"
-  },
-  "scripts": {
-    "test": "gulp"
-  }
+	"name": "precss",
+	"version": "0.1.0",
+	"description": "Use variables, mixins, conditionals, and other goodies in your CSS",
+	"keywords": [
+		"postcss",
+		"css",
+		"postcss-plugin",
+		"variables",
+		"conditionals",
+		"ifs",
+		"thens",
+		"elses",
+		"fors",
+		"nesteds",
+		"nestings",
+		"eaches",
+		"mixins",
+		"imports"
+	],
+	"author": "Jonathan Neal <jonathantneal@hotmail.com>",
+	"license": "CC0-1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jonathantneal/precss.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jonathantneal/precss/issues"
+	},
+	"homepage": "https://github.com/jonathantneal/precss",
+	"dependencies": {
+		"autoprefixer-core": "^5.2.1",
+		"postcss": "^4.1.16",
+		"postcss-advanced-variables": "0.0.3",
+		"postcss-color-function": "^1.3.2",
+		"postcss-import": "^6.1.1",
+		"postcss-media-minmax": "^1.2.0",
+		"postcss-mixins": "^0.3.0",
+		"postcss-nested": "^0.3.2",
+		"postcss-sass-extend": "0.0.1",
+		"postcss-simple-vars": "^0.3.0"
+	},
+	"devDependencies": {
+		"chai": "^3.0.0",
+		"gulp": "^3.9.0",
+		"gulp-eslint": "^0.15.0",
+		"gulp-mocha": "^2.1.2"
+	},
+	"scripts": {
+		"test": "gulp"
+	}
 }
