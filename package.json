@@ -6,6 +6,7 @@
 		"postcss",
 		"css",
 		"postcss-plugin",
+		"sass",
 		"variables",
 		"conditionals",
 		"ifs",
@@ -16,7 +17,9 @@
 		"nestings",
 		"eaches",
 		"mixins",
-		"imports"
+		"imports",
+		"extends",
+		"placeholders"
 	],
 	"author": "Jonathan Neal <jonathantneal@hotmail.com>",
 	"license": "CC0-1.0",
