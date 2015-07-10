@@ -1,3 +1,7 @@
+## 0.2.0 (2015-07-10)
+
+Added: Support for @extend and %placeholder
+
 ## 0.1.3 (2015-07-08)
 
 Added: Support for @else statements
