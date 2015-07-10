@@ -124,12 +124,18 @@ body {
 }
 
 .pen-input {
+	-webkit-appearance: none;
 	background: none;
 	border: none;
 	margin: 0;
 	overflow: auto;
 	outline: none;
 	resize: none;
+	text-shadow: none;
+}
+
+.-ios .pen-input {
+	left: -2px;
 }
 
 .pen-input::-moz-selection {
@@ -149,9 +155,13 @@ body {
 	position: absolute;
 }
 
+.-ios .pen-caret-symbol {
+	display: none;
+}
+
 .pen-caret-symbol:not(.is-active) {
 	-webkit-animation: 1s .25s infinite blink;
-	        animation: 1s .25s infinite blink;
+	animation: 1s .25s infinite blink;
 }
 
 /* token styles */
