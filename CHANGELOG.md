@@ -1,6 +1,6 @@
-## 0.2.0 (2015-07-10)
+## 0.2.1 (2015-07-10)
 
-Added: Support for @extend and %placeholder
+Added: Switch from postcss-sass-extend to postcss-simple-extend
 
 ## 0.1.3 (2015-07-08)
 

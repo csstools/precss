@@ -1,11 +1,12 @@
 {
 	"name": "precss",
-	"version": "0.1.0",
-	"description": "Use variables, mixins, conditionals, and other goodies in your CSS",
+	"version": "0.2.1",
+	"description": "Use Sass-like markup in your CSS",
 	"keywords": [
 		"postcss",
 		"css",
 		"postcss-plugin",
+		"sass",
 		"variables",
 		"conditionals",
 		"ifs",
@@ -16,7 +17,9 @@
 		"nestings",
 		"eaches",
 		"mixins",
-		"imports"
+		"imports",
+		"extends",
+		"placeholders"
 	],
 	"author": "Jonathan Neal <jonathantneal@hotmail.com>",
 	"license": "CC0-1.0",
