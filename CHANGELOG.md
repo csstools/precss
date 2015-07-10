@@ -1,3 +1,7 @@
+## 0.2.2 (2015-07-10)
+
+Updated: Documentation
+
 ## 0.2.1 (2015-07-10)
 
 Added: Switch from postcss-sass-extend to postcss-simple-extend
