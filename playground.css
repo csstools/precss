@@ -77,8 +77,7 @@ body {
 }
 
 .pen-caret,
-.pen-style,
-.pen-output {
+.pen-style {
 	overflow: hidden;
 }
 
