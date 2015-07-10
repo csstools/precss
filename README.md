@@ -40,7 +40,7 @@ $column: 200px;
 ```css
 /* before */
 
-.foo {
+.notice--clear {
 	@if 3 < 5 {
 		background: green;
 	}
@@ -51,7 +51,7 @@ $column: 200px;
 
 /* after */
 
-.foo {
+.notice--clear {
 	background: green;
 }
 ```
@@ -120,7 +120,34 @@ $column: 200px;
 
 /* after */
 
-magic {}
+.search {
+	padding-left: 16px;
+}
+
+.search::after {
+	content: "";
+	background-url: url(/icons/$(name).png);
+}
+```
+
+### Extends
+
+```css
+/* before */
+
+@define-extend bg-green {
+	background: green;
+}
+
+.notice--clear {
+	@extend bg-green;
+}
+
+/* after */
+
+.notice--clear {
+	background: green;
+}
 ```
 
 ### Imports
