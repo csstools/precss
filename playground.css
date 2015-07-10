@@ -68,7 +68,6 @@ body {
 	box-sizing: border-box;
 	font: 100%/1.25 monospace, monospace;
 	font-size: 100%;
-	-webkit-overflow-scrolling: touch;
 	padding: 2em;
 	position: absolute;
 	-moz-tab-size: 4;
@@ -84,6 +83,7 @@ body {
 .pen-input,
 .pen-output {
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .pen-input {
