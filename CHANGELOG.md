@@ -1,3 +1,10 @@
+## 0.3.0 (2015-07-22)
+
+Added: postcss-advanced-variables support for vars in `@media`
+Added: postcss-import `skipDuplicates` option to allows you to not skip duplicated files
+Added: postcss-mixins `mixinsFiles` option.
+Updated: other plugins without notable changes
+
 ## 0.2.2 (2015-07-10)
 
 Updated: Documentation
