@@ -280,6 +280,7 @@ var _ = self.Prism = {
 					var match = pattern.exec(str);
 
 					if (match) {
+						str = String(str);
 						if(lookbehind) {
 							lookbehindLength = match[1].length;
 						}
@@ -443,44 +444,65 @@ Prism.languages.css = {
 	'function': /[-a-z0-9]+(?=\()/i
 };
 
-Prism.languages.scss = Prism.languages.extend('css', {
+Prism.languages.cssnext = Prism.languages.extend('css', {
 	'comment': {
-		pattern: /(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/,
+		pattern: /(^|[^\\])(?:\/\*[\w\W]*?\*\/|\/\/.*)/,
 		lookbehind: true
 	},
-	// aturle is just the @***, not the entire rule (to highlight var & stuffs)
-	// + add ability to highlight number & unit for media queries
-	'atrule': /@[\w-]+(?=\s+(\(|\{|;))/i,
-	// url, compassified
-	'url': /([-a-z]+-)*url(?=\()/i,
-	// CSS selector regex is not appropriate for Sass
-	// since there can be lot more things (var, @ directive, nesting..)
-	// a selector must start at the end of a property or after a brace (end of other rules or nesting)
-	// it can contain some caracters that aren't used for defining rules or end of selector, & (parent selector), or interpolated variable
-	// the end of a selector is found when there is no rules in it ( {} or {\s}) or if there is a property (because an interpolated var
-	// can "pass" as a selector- e.g: proper#{$erty})
-	// this one was ard to do, so please be careful if you edit this one :)
-	'selector': /([^@;\{\}\(\)]?([^@;\{\}\(\)]|&|#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/m
+	'atrule': {
+		pattern: /@[\w-]+(?:\([^()]+\)|[^(])*?(?=\s+[{;])/,
+		inside: {
+			'selector-container': {
+				pattern: /@nest ([^\{\s][^\{]*)/,
+				inside: {
+					'rule': /@[\w-]+/,
+					'selector': {
+						pattern: /[^\{]+/,
+						inside: {
+							'pseudo-element': /:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,
+							'pseudo-class': /:[-\w]+(?:\(.*\))?/,
+							'class': /\.[-:\.\w]+/,
+							'id': /#[-:\.\w]+/
+						},
+					},
+				},
+			},
+			'rule': /@[\w-]+/,
+		},
+	},
+	'selector': {
+		pattern: /[^\{\}\s][^\{\}]*(?=\s*\{)/,
+		inside: {
+			'pseudo-element': /:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,
+			'pseudo-class': /:[-\w]+(?:\(.*\))?/,
+			'class': /\.[-:\.\w]+/,
+			'id': /#[-:\.\w]+/
+		}
+	},
+	'variable-container': {
+		pattern: /var\(--.+?\)/,
+		inside: {
+			'function': /var/,
+			'punctuation': /\(|\)/,
+			'variable': /--[-_\w]+/,
+		},
+	},
+	'property': {
+		pattern: /(\b|\B)[\w-]+(?=\s*:)/i,
+		inside: {
+			'property-variable': /--[^\s]+/,
+		},
+	},
 });
 
-Prism.languages.insertBefore('scss', 'atrule', {
-	'keyword': /@(if|else if|else|for|each|while|import|extend|debug|define-extend|define-mixin|warn|mixin|include|function|return|content)/i
-});
-
-Prism.languages.insertBefore('scss', 'property', {
+Prism.languages.insertBefore('cssnext', 'property', {
 	// var and interpolated vars
-	'variable': /((\$[-_\w]+)|(\$\([-_\w]+\)))/i
-});
-
-Prism.languages.insertBefore('scss', 'selector', {
-	// var and interpolated vars
-	'variable': /((\$[-_\w]+)|(\$\([-_\w]+\)))/i
-});
-
-Prism.languages.insertBefore('scss', 'function', {
-	'placeholder': /%[-_\w]+/i,
-	'statement': /\B!(default|optional)\b/i,
-	'boolean': /\b(true|false)\b/,
-	'null': /\b(null)\b/,
-	'operator': /\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|%)\s+/
+	'variable-container': {
+		pattern: /var\(--.+?\)/,
+		inside: {
+			'function': /var/,
+			'punctuation': /\(|\)/,
+			'variable': /--[-_\w]+/,
+		},
+	},
 });

@@ -1,0 +1,257 @@
+/* typography */
+
+@font-face {
+	font-family: code;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas"), local("DejaVu Sans Mono"), local("DejaVu Sans Mono"), local("DejaVuSansMono");
+}
+
+@font-face {
+	font-family: code;
+	font-style: italic;
+	font-weight: 400;
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas Italic"), local("Consolas-Italic"), local("DejaVu Sans Mono Oblique"), local("DejaVuSansMono-Oblique");
+}
+
+@font-face {
+	font-family: code;
+	font-style: normal;
+	font-weight: 700;
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas Bold"), local("Consolas-Bold"), local("DejaVu Sans Mono Bold"), local("DejaVuSansMono-Bold");
+}
+
+@font-face {
+	font-family: code;
+	font-style: italic;
+	font-weight: 700;
+	src: local("Menlo-Regular"), local("Monaco"), local("Consolas Bold Italic"), local("Consolas-BoldItalic"), local("DejaVu Sans Mono Bold Oblique"), local("DejaVuSansMono-BoldOblique");
+}
+
+/* animations */
+
+@-webkit-keyframes blink {
+	20% { background-color: rgba(0,0,0,1); }
+	50% { background-color: rgba(0,0,0,0); }
+	80% { background-color: rgba(0,0,0,1); }
+}
+
+@keyframes blink {
+	20% { background-color: rgba(0,0,0,1); }
+	50% { background-color: rgba(0,0,0,0); }
+	80% { background-color: rgba(0,0,0,1); }
+}
+
+/* base */
+
+html {
+	font-size: 112.5%;
+	overflow: hidden;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+/* link style */
+
+body > a {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+
+body > a > img {
+	height: 15vw;
+	max-height: 200px;
+	max-width: 200px;
+	min-height: 100px;
+	min-width: 100px;
+	width: 15vw;
+}
+
+/* pen styles */
+
+.dacoda-container {
+	background-color: #f6f6f3;
+	color: #404040;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.dacoda-input,
+.dacoda-plain,
+.dacoda-style,
+.dacoda-output {
+	box-sizing: border-box;
+	font: 100%/1.25 code, monospace;
+	padding: 2em 1.5em;
+	position: absolute;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	white-space: pre;
+}
+
+.dacoda-plain,
+.dacoda-style {
+	overflow: hidden;
+}
+
+.dacoda-input,
+.dacoda-output {
+	box-shadow: inset .5em 0 0 0 rgba(225,225,225,.5);
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 639px) {
+	.dacoda-ouput {
+		font-size: 75%;
+	}
+
+	.dacoda-input,
+	.dacoda-plain,
+	.dacoda-style {
+		top: 0; right: 0; bottom: 50%; left: 0;
+		width: 100%; height: 50%;
+	}
+
+	.dacoda-output {
+		top: 50%; right: 0; bottom: 0; left: 0;
+		width: 100%; height: 50%;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.dacoda-input,
+	.dacoda-plain,
+	.dacoda-style {
+		top: 0; right: 50%; bottom: 0; left: 0;
+		width: 50%; height: 100%;
+	}
+
+	.dacoda-output {
+		top: 0; right: 0; bottom: 0; left: 50%;
+		width: 50%; height: 100%;
+	}
+}
+
+.dacoda-input,
+.dacoda-plain {
+	color: transparent;
+}
+
+.dacoda-input {
+	-webkit-appearance: none;
+	background: none;
+	border: none;
+	margin: 0;
+	outline: none;
+	resize: none;
+	text-shadow: none;
+}
+
+.-ios .dacoda-input {
+	left: -2px;
+}
+
+.dacoda-input::-moz-selection {
+	background: rgba(179,212,252,.25);
+	color: #000;
+}
+
+.dacoda-input::selection {
+	background: rgba(179,212,252,.25);
+	color: #000;
+}
+
+.dacoda-caret {
+	display: inline-block;
+	height: 1.25em; width: 1px;
+	background-color: rgba(0,0,0,1);
+	position: absolute;
+}
+
+.dacoda-caret:not(.is-focused),
+.-ios .dacoda-caret {
+	display: none;
+}
+
+.dacoda-caret:not(.is-active) {
+	-webkit-animation: 1s .25s infinite blink;
+	animation: 1s .25s infinite blink;
+}
+
+/* token styles */
+
+.token {}
+
+.token.punctuation {
+	color: #8d6767;
+}
+
+.token.selector {
+	color: #222;
+}
+
+.token.id {
+	color: #6644ee;
+}
+
+.token.class {
+	color: #3366dd;
+}
+
+.token.pseudo-class,
+.token.pseudo-element {
+	color: #365fb3;
+}
+
+.token.property {
+	color: #cb2e87;
+}
+
+.token.number {
+	color: #96aaef;
+}
+
+.token.function {
+	color: #cc2222;
+}
+
+.token.operator {
+	color: #ff3471;
+}
+
+.token.rule {
+	color: #438323;
+}
+
+.token.url {
+	color: #cc2222;
+}
+
+.token.number {
+	color: #fe6426;
+}
+
+.token.string {
+	color: #4f982d;
+}
+
+.token.property-variable,
+.token.variable {
+	font-style: italic;
+}
+
+.token.variable {
+	color: #897200;
+}
+
+.token.keyword {
+	color: #c90411;
+}
