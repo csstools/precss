@@ -8,6 +8,11 @@ var processors = [
 		defaults: {}
 	},
 	{
+		plugin: require('postcss-mixins'),
+		namespace: 'mixins',
+		defaults: {}
+	},
+	{
 		plugin: require('postcss-advanced-variables'),
 		namespace: 'variables',
 		defaults: {}
@@ -15,11 +20,6 @@ var processors = [
 	{
 		plugin: require('postcss-media-minmax'),
 		namespace: 'minmax',
-		defaults: {}
-	},
-	{
-		plugin: require('postcss-mixins'),
-		namespace: 'mixins',
 		defaults: {}
 	},
 	{
