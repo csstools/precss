@@ -298,27 +298,32 @@ describe('postcss-minmax', function() {
 	});
 });
 
-describe('postcss-sass-extend', function() {
-	it('supports extend', function (done) {
+describe('postcss-extend', function() {
+	it('supports @extend', function (done) {
 		test(
 			'@define-extend black-color { ' +
+				'color: black;' +
+			'} ' +
+			'%right-align { ' +
+				'text-align: right; ' +
+			'} ' +
+			'.a { ' +
+				'@extend black-color; ' +
+			'} ' +
+			'.b { ' +
+				'@extend .a; ' +
+			'} ' +
+			'.c { ' +
+				'@extend .b; ' +
+				'@extend %right-align; ' +
+			'} ',
+
+			'.a, .b, .c { ' +
 				'color: black; ' +
 			'} ' +
-			'.a { ' +
-				'@extend black-color; ' +
-			'} ' +
-			'.b { ' +
-				'@extend black-color; ' +
-			'}',
-
-			'.a,\n.b { ' +
-				'color: black;\n' +
-			'} ' +
-			'.a { ' +
-			'} ' +
-			'.b { ' +
-			'}',
-
+			'.c { ' +
+				'text-align: right; ' +
+			'} ',
 			{},
 
 			done

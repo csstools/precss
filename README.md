@@ -135,22 +135,35 @@ $column: 200px;
 ### Extends
 
 ```css
-/* before */
+/* Before */
 
-@define-extend bg-green {
-	background: green;
+@define-extend black-color { 
+	color: black;
+}
+%right-align {
+	text-align: right;
+} 
+.a {
+	@extend black-color;
+} 
+.b {
+	@extend .a;
+}
+.c { 
+	@extend .b;
+	@extend %right-align;
 }
 
-.notice--clear {
-	@extend bg-green;
+/* After */
+
+.a, .b, .c {
+	color: black;
 }
-
-/* after */
-
-.notice--clear {
-	background: green;
+.c {
+	text-align: right;
 }
 ```
+More uses and examples for `@extend` can be found in [its own README](https://github.com/travco/postcss-extend#postcss-extend-).
 
 ### Imports
 
