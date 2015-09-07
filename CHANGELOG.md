@@ -1,3 +1,17 @@
+## 1.0.0 (2015-09-07)
+
+Updated: PostCSS 5.0.4
+Updated: PostCSS Advanced Variables 1.0.0
+Updated: PostCSS Color Function 2.0.0
+Updated: PostCSS Import 7.0.0
+Updated: PostCSS Media Minmax 2.0.0
+Updated: PostCSS Mixins 1.0.0
+Updated: PostCSS Nested 1.0.0
+Updated: PostCSS Simple Extend 1.0.0
+Updated: ESLint 1.0.0
+Removed: PostCSS Simple Vars
+Removed: PostCSS process method which is now in core
+
 ## 0.3.0 (2015-07-22)
 
 Added: postcss-advanced-variables support for vars in `@media`
