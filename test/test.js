@@ -311,12 +311,8 @@ describe('postcss-sass-extend', function() {
 				'@extend black-color; ' +
 			'}',
 
-			'.a,\n.b { ' +
+			'.a, .b { ' +
 				'color: black;\n' +
-			'} ' +
-			'.a { ' +
-			'} ' +
-			'.b { ' +
 			'}',
 
 			{},

@@ -1,3 +1,17 @@
+## 1.1.0 (2015-09-08)
+
+Added: PostCSS Extend
+Added: PostCSS Partial Import
+Added: PostCSS W3C Custom Media
+Added: PostCSS W3C Custom Properties
+Added: PostCSS W3C Custom Selectors
+Added: PostCSS W3C Multiple Matches
+Added: PostCSS W3C Multiple Nots
+Updated: PostCSS Media Minmax 2.1.0
+Updated: Documentation
+Removed: PostCSS Import
+Removed: PostCSS Sass Extend
+
 ## 1.0.0 (2015-09-07)
 
 Updated: PostCSS 5.0.4
