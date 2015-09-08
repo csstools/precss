@@ -3,7 +3,7 @@ var postcss = require('postcss');
 // list of all plugins
 var processors = [
 	{
-		plugin: require('postcss-import'),
+		plugin: require('postcss-partial-import'),
 		namespace: 'import',
 		defaults: {}
 	},
@@ -15,6 +15,21 @@ var processors = [
 	{
 		plugin: require('postcss-advanced-variables'),
 		namespace: 'variables',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-custom-selectors'),
+		namespace: 'selectors',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-custom-media'),
+		namespace: 'media',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-custom-properties'),
+		namespace: 'properties',
 		defaults: {}
 	},
 	{
@@ -33,8 +48,18 @@ var processors = [
 		defaults: {}
 	},
 	{
-		plugin: require('postcss-simple-extend'),
+		plugin: require('postcss-extend'),
 		namespace: 'extend',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-selector-matches'),
+		namespace: 'matches',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-selector-not'),
+		namespace: 'not',
 		defaults: {}
 	}
 ];

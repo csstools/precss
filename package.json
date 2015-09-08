@@ -1,6 +1,6 @@
 {
 	"name": "precss",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Use Sass-like markup in your CSS",
 	"keywords": [
 		"postcss",
@@ -33,14 +33,18 @@
 	"homepage": "https://github.com/jonathantneal/precss",
 	"dependencies": {
 		"postcss": "^5.0.4",
-		"postcss-advanced-variables": "1.0.0",
+		"postcss-advanced-variables": "1.1.0",
 		"postcss-color-function": "^2.0.0",
-		"postcss-import": "^7.0.0",
-		"postcss-media-minmax": "^2.0.0",
+		"postcss-custom-media": "^5.0.0",
+		"postcss-custom-properties": "^5.0.0",
+		"postcss-custom-selectors": "^3.0.0",
+		"postcss-extend": "^0.4.3",
+		"postcss-media-minmax": "^2.1.0",
 		"postcss-mixins": "^1.0.0",
 		"postcss-nested": "^1.0.0",
-		"postcss-sass-extend": "0.0.1",
-		"postcss-simple-extend": "^1.0.0"
+		"postcss-partial-import": "^1.1.0",
+		"postcss-selector-matches": "^2.0.0",
+		"postcss-selector-not": "^2.0.0"
 	},
 	"devDependencies": {
 		"chai": "^3.2.0",
@@ -50,5 +54,9 @@
 	},
 	"scripts": {
 		"test": "gulp"
+	},
+	"engines": {
+		"iojs": ">=2.0.0",
+		"node": ">=0.12.0"
 	}
 }
