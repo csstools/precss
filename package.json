@@ -1,6 +1,6 @@
 {
 	"name": "precss",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Use Sass-like markup in your CSS",
 	"keywords": [
 		"postcss",
@@ -38,7 +38,7 @@
 		"postcss-custom-media": "^5.0.0",
 		"postcss-custom-properties": "^5.0.0",
 		"postcss-custom-selectors": "^3.0.0",
-		"postcss-extend": "^0.4.3",
+		"postcss-extend": "^1.0.0",
 		"postcss-media-minmax": "^2.1.0",
 		"postcss-mixins": "^1.0.0",
 		"postcss-nested": "^1.0.0",
