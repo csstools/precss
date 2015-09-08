@@ -245,7 +245,7 @@ grunt.loadNpmTasks('grunt-postcss');
 grunt.initConfig({
 	postcss: {
 		options: {
-			parser: require('postcss-scss'),
+			syntax: require('postcss-scss'),
 			processors: [
 				require('precss')({ /* options */ })
 			]
