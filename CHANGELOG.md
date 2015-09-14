@@ -1,3 +1,8 @@
+## 1.1.3 (2015-09-14)
+
+Updated: PostCSS 5.0.5
+Updated: PostCSS Partial Import 1.3.0
+
 ## 1.1.2 (2015-09-08)
 
 Updated: PostCSS Partial Import 1.1.1
