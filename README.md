@@ -275,7 +275,7 @@ PreCSS blends Sass-like strength with W3C future-syntax superpower, powered by t
 - [postcss-selector-not]: W3C multiple not pseudo-classes
 
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
-[Gulp PostCSS]:  https://github.com/nDmitry/grunt-postcss
+[Gulp PostCSS]:  https://github.com/postcss/gulp-postcss
 [PostCSS SCSS]:  https://github.com/postcss/postcss-scss
 [PostCSS]:       https://github.com/postcss/postcss
 [PreCSS]:        https://github.com/jonathantneal/precss
