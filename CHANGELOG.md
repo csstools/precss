@@ -1,3 +1,7 @@
+## 1.2.1 (2015-09-24)
+
+Updated: Plugin ordering
+
 ## 1.2.0 (2015-09-24)
 
 Added: PostCSS Nesting 2.0.4
