@@ -1,3 +1,7 @@
+## 1.2.2 (2015-09-24)
+
+Updated: package.json to spaces
+
 ## 1.2.1 (2015-09-24)
 
 Updated: Plugin ordering
