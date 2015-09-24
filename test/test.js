@@ -334,4 +334,12 @@ describe('postcss-nesting', function() {
 	it('supports nesting + extend', function (done) {
 		test('%a { color: red } b { @nest & c { @extend %a; } color: white } z {}', 'b c { color: red } b { color: white } z {}', {}, done);
 	});
+
+	it('supports nesting + selectors 1', function (done) {
+		test('@custom-selector :--content a, b; :--content { @nest & c, & d { color: white } } z {}', 'a, b { } a c, b c, a d, b d { color: white } z {}', {}, done);
+	});
+
+	it('supports nesting + selectors 2', function (done) {
+		test('@custom-selector :--content a, b; :--content { @nest & :--content { color: white } } z {}', 'a, b { } a a, b a, a b, b b { color: white } z {}', {}, done);
+	});
 });

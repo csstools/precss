@@ -18,11 +18,6 @@ var processors = [
 		defaults: {}
 	},
 	{
-		plugin: require('postcss-custom-selectors'),
-		namespace: 'selectors',
-		defaults: {}
-	},
-	{
 		plugin: require('postcss-custom-media'),
 		namespace: 'media',
 		defaults: {}
@@ -50,6 +45,11 @@ var processors = [
 	{
 		plugin: require('postcss-nested'),
 		namespace: 'nested',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-custom-selectors'),
+		namespace: 'selectors',
 		defaults: {}
 	},
 	{
