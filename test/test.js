@@ -330,4 +330,8 @@ describe('postcss-nesting', function() {
 	it('supports extend + nesting', function (done) {
 		test('%a { @nest & b { color: blue } } c { @extend %a; } z {}', 'c { } c b { color: blue } z {}', {}, done);
 	});
+
+	it('supports nesting + extend', function (done) {
+		test('%a { color: red } b { @nest & c { @extend %a; } color: white } z {}', 'b c { color: red } b { color: white } z {}', {}, done);
+	});
 });
