@@ -1,3 +1,7 @@
+## 1.2.3 (2015-09-24)
+
+Updated: Move selectors after nesting
+
 ## 1.2.2 (2015-09-24)
 
 Updated: package.json to spaces

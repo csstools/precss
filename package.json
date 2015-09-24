@@ -1,6 +1,6 @@
 {
   "name": "precss",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Use Sass-like markup in your CSS",
   "keywords": [
     "postcss",
