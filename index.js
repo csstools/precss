@@ -43,13 +43,18 @@ var processors = [
 		defaults: {}
 	},
 	{
-		plugin: require('postcss-nested'),
-		namespace: 'nested',
+		plugin: require('postcss-extend'),
+		namespace: 'extend',
 		defaults: {}
 	},
 	{
-		plugin: require('postcss-extend'),
-		namespace: 'extend',
+		plugin: require('postcss-nesting'),
+		namespace: 'nesting',
+		defaults: {}
+	},
+	{
+		plugin: require('postcss-nested'),
+		namespace: 'nested',
 		defaults: {}
 	},
 	{

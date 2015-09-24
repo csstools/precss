@@ -1,3 +1,11 @@
+## 1.2.0 (2015-09-24)
+
+Added: PostCSS Nesting 2.0.4
+Added: Tests for `@nest`
+Updated: PostCSS 5.0.6
+Updated: PostCSS Mixins 1.0.1
+Deprecated: PostCSS Nesting 2.0.4
+
 ## 1.1.3 (2015-09-14)
 
 Updated: PostCSS 5.0.5
