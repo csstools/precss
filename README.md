@@ -128,7 +128,7 @@ $column: 200px;
 
 .search::after {
 	content: "";
-	background-url: url(/icons/$(name).png);
+	background-url: url(/icons/search.png);
 }
 ```
 
@@ -267,7 +267,7 @@ PreCSS blends Sass-like strength with W3C future-syntax superpower, powered by t
 - [postcss-custom-selectors]: W3C custom selectors
 - [postcss-custom-media]: W3C custom media queries
 - [postcss-custom-properties]: W3C custom variables
-- [postcss-media-minmax]: W3C `<` `<=` `>=` `>` media queries 
+- [postcss-media-minmax]: W3C `<` `<=` `>=` `>` media queries
 - [postcss-color-function]: W3C color methods
 - [postcss-nested]: Sass-like nested selectors
 - [postcss-extend]: W3C and Sass-like extend methods
