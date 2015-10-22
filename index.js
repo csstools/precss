@@ -3,69 +3,69 @@ var postcss = require('postcss');
 // list of all plugins
 var processors = [
 	{
-		plugin: require('postcss-partial-import'),
+		plugin:    require('postcss-partial-import'),
 		namespace: 'import',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-mixins'),
+		plugin:    require('postcss-mixins'),
 		namespace: 'mixins',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-advanced-variables'),
+		plugin:    require('postcss-advanced-variables'),
 		namespace: 'variables',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-custom-media'),
+		plugin:    require('postcss-custom-media'),
 		namespace: 'media',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-custom-properties'),
+		plugin:    require('postcss-custom-properties'),
 		namespace: 'properties',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-media-minmax'),
+		plugin:    require('postcss-media-minmax'),
 		namespace: 'minmax',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-color-function'),
+		plugin:    require('postcss-color-function'),
 		namespace: 'color',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-nesting'),
+		plugin:    require('postcss-nesting'),
 		namespace: 'nesting',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-nested'),
+		plugin:    require('postcss-nested'),
 		namespace: 'nested',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-custom-selectors'),
+		plugin:    require('postcss-custom-selectors'),
 		namespace: 'selectors',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-extend'),
+		plugin:    require('postcss-extend'),
 		namespace: 'extend',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-selector-matches'),
+		plugin:    require('postcss-selector-matches'),
 		namespace: 'matches',
-		defaults: {}
+		defaults:  {}
 	},
 	{
-		plugin: require('postcss-selector-not'),
+		plugin:    require('postcss-selector-not'),
 		namespace: 'not',
-		defaults: {}
+		defaults:  {}
 	}
 ];
 

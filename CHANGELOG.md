@@ -1,3 +1,12 @@
+## 1.3.0 (2015-10-21)
+
+Updated: PostCSS 5.0.10 (patch)
+Updated: Advanced Variables 1.2.2 (minor)
+Updated: Extend 1.0.1 (minor)
+Updated: Mixins 2.1.0 (major)
+Updated: Nesting 2.0.6 (patch)
+Updated: Tests and documentation
+
 ## 1.2.3 (2015-09-24)
 
 Updated: Move selectors after nesting

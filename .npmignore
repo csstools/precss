@@ -1,5 +1,2 @@
-.gitignore
-	node_modules/
-	test/
-.travis.yml
-	gulpfile.js
+node_modules/
+npm-debug.log
