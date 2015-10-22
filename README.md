@@ -291,6 +291,6 @@ PreCSS blends Sass-like strength with W3C future-syntax superpower, powered by t
 [postcss-custom-media]:       https://github.com/postcss/postcss-custom-media
 [postcss-media-minmax]:       https://github.com/postcss/postcss-media-minmax
 [postcss-selector-not]:       https://github.com/postcss/postcss-selector-not
-[postcss-extend]:             https://github.com/postcss/postcss-extend
+[postcss-extend]:             https://github.com/travco/postcss-extend
 [postcss-mixins]:             https://github.com/postcss/postcss-mixins
 [postcss-nested]:             https://github.com/postcss/postcss-nested
