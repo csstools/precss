@@ -165,6 +165,50 @@ $column: 200px;
 body { background: black; }
 ```
 
+### Property Lookup
+
+```css
+/* Before */
+
+.heading {
+	margin: 20px;
+	padding: @margin;
+}
+
+/* After */
+
+.heading {
+	margin: 20px;
+	padding: 20px;
+}
+```
+
+### Root
+
+```css
+/* Before */
+
+.parent {
+	background: white;
+
+	@at-root{
+		.child {
+			background: black;
+		}
+	}
+}
+
+/* After */
+
+.child {
+	background: black;
+}
+
+.parent {
+	background: white;
+}
+```
+
 ## Usage
 
 Follow these simple steps to use [PreCSS].
@@ -269,7 +313,10 @@ PreCSS blends Sass-like strength with W3C future-syntax superpower, powered by t
 - [postcss-custom-properties]: W3C custom variables
 - [postcss-media-minmax]: W3C `<` `<=` `>=` `>` media queries
 - [postcss-color-function]: W3C color methods
+- [postcss-nesting]: W3C nested selectors
 - [postcss-nested]: Sass-like nested selectors
+- [postcss-atroot]: place rules back up to the root
+- [postcss-property-lookup]: reference other property values
 - [postcss-extend]: W3C and Sass-like extend methods
 - [postcss-selector-matches]: W3C multiple matches pseudo-classes
 - [postcss-selector-not]: W3C multiple not pseudo-classes
@@ -286,11 +333,14 @@ PreCSS blends Sass-like strength with W3C future-syntax superpower, powered by t
 [postcss-custom-properties]:  https://github.com/postcss/postcss-custom-properties
 [postcss-custom-selectors]:   https://github.com/postcss/postcss-custom-selectors
 [postcss-selector-matches]:   https://github.com/postcss/postcss-selector-matches
+[postcss-property-lookup]:    https://github.com/simonsmith/postcss-property-lookup
 [postcss-color-function]:     https://github.com/postcss/postcss-color-function
 [postcss-partial-import]:     https://github.com/jonathantneal/postcss-partial-import
 [postcss-custom-media]:       https://github.com/postcss/postcss-custom-media
 [postcss-media-minmax]:       https://github.com/postcss/postcss-media-minmax
 [postcss-selector-not]:       https://github.com/postcss/postcss-selector-not
+[postcss-nesting]:            https://github.com/jonathantneal/postcss-nesting
+[postcss-atroot]:             https://github.com/OEvgeny/postcss-atroot
 [postcss-extend]:             https://github.com/travco/postcss-extend
 [postcss-mixins]:             https://github.com/postcss/postcss-mixins
 [postcss-nested]:             https://github.com/postcss/postcss-nested

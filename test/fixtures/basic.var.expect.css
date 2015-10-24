@@ -93,8 +93,12 @@
 	width: 500px;
 }
 
+.phablet {
+	color: blue;
+}
+
 body.is_dark .phone_title {
-	color: white;
+	color: white
 }
 
 .phone img {
@@ -114,5 +118,6 @@ body.is_dark .phone_title {
 
 .bar {
 
+	background-color: blue;
 	color: blue;
 }

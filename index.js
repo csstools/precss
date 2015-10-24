@@ -53,6 +53,18 @@ var processors = [
 		defaults:  {}
 	},
 	{
+		plugin:    require('postcss-atroot'),
+		namespace: 'atroot',
+		defaults:  {}
+	},
+	{
+		plugin:    require('postcss-property-lookup'),
+		namespace: 'lookup',
+		defaults:  {
+			logLevel: 'warn'
+		}
+	},
+	{
 		plugin:    require('postcss-extend'),
 		namespace: 'extend',
 		defaults:  {}

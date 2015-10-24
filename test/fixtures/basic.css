@@ -169,6 +169,12 @@ $orientation: landscape;
 
 		body.is_dark & {
 			color: white;
+
+			@at-root {
+				.phablet {
+					color: $pass;
+				}
+			}
 		}
 	}
 
@@ -184,5 +190,6 @@ $orientation: landscape;
 .bar {
 	@extend foo;
 
+	background-color: @color;
 	color: $pass;
 }
