@@ -8,7 +8,7 @@ Enjoy a familiar syntax with variables, mixins, conditionals, and other goodies.
 
 ### Variables
 
-```css
+```scss
 /* before */
 
 $blue: #056ef0;
@@ -37,7 +37,7 @@ $column: 200px;
 
 ### Conditionals
 
-```css
+```scss
 /* before */
 
 .notice--clear {
@@ -58,7 +58,7 @@ $column: 200px;
 
 ### Loops
 
-```css
+```scss
 /* before */
 
 @for $i from 1 to 3 {
@@ -78,7 +78,7 @@ $column: 200px;
 }
 ```
 
-```css
+```scss
 /* before */
 
 @each $icon in (foo, bar, baz) {
@@ -104,7 +104,7 @@ $column: 200px;
 
 ### Mixins
 
-```css
+```scss
 /* before */
 
 @define-mixin icon $name {
@@ -134,7 +134,7 @@ $column: 200px;
 
 ### Extends
 
-```css
+```scss
 /* before */
 
 @define-extend bg-green {
@@ -154,7 +154,7 @@ $column: 200px;
 
 ### Imports
 
-```css
+```scss
 /* Before */
 
 @import "partials/base"; /* Contents of partials/_base.css: `body { background: black; }` */
@@ -167,7 +167,7 @@ body { background: black; }
 
 ### Property Lookup
 
-```css
+```scss
 /* Before */
 
 .heading {
@@ -185,7 +185,7 @@ body { background: black; }
 
 ### Root
 
-```css
+```scss
 /* Before */
 
 .parent {
