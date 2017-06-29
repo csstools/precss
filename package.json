@@ -4,9 +4,9 @@
   "description": "Use Sass-like markup in your CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
-  "repository": "jonathantneal/postcss-normalize",
-  "homepage": "https://github.com/jonathantneal/postcss-normalize#readme",
-  "bugs": "https://github.com/jonathantneal/postcss-normalize/issues",
+  "repository": "jonathantneal/precss",
+  "homepage": "https://github.com/jonathantneal/precss#readme",
+  "bugs": "https://github.com/jonathantneal/precss/issues",
   "main": "index.js",
   "files": [
     "index.js"
