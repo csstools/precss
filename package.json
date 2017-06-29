@@ -37,7 +37,7 @@
     "postcss-atroot": "^0.1.2",
     "postcss-color-function": "^2.0.0",
     "postcss-custom-media": "^5.0.0",
-    "postcss-custom-properties": "^5.0.0",
+    "postcss-custom-properties": "^6.1.0",
     "postcss-custom-selectors": "^3.0.0",
     "postcss-extend": "^1.0.1",
     "postcss-media-minmax": "^2.1.0",
