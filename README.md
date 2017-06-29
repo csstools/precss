@@ -112,7 +112,7 @@ $column: 200px;
 
 	&::after {
 		content: "";
-		background-url: url(/icons/$(name).png);
+		background-image: url(/icons/$(name).png);
 	}
 }
 
@@ -128,7 +128,7 @@ $column: 200px;
 
 .search::after {
 	content: "";
-	background-url: url(/icons/search.png);
+	background-image: url(/icons/search.png);
 }
 ```
 
