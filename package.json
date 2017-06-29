@@ -2,35 +2,25 @@
   "name": "precss",
   "version": "1.4.0",
   "description": "Use Sass-like markup in your CSS",
-  "keywords": [
-    "postcss",
-    "css",
-    "postcss-plugin",
-    "sass",
-    "variables",
-    "conditionals",
-    "ifs",
-    "thens",
-    "elses",
-    "fors",
-    "nesteds",
-    "nestings",
-    "eaches",
-    "mixins",
-    "imports",
-    "extends",
-    "placeholders"
-  ],
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jonathantneal/precss.git"
+  "repository": "jonathantneal/postcss-normalize",
+  "homepage": "https://github.com/jonathantneal/postcss-normalize#readme",
+  "bugs": "https://github.com/jonathantneal/postcss-normalize/issues",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "clean": "git clean -X -d -f",
+    "prepublish": "npm test",
+    "test": "echo 'Running tests...'; npm run test:js && npm run test:tape",
+    "test:js": "eslint *.js --cache --ignore-pattern .gitignore",
+    "test:tape": "tape test/*.js | tap-spec"
   },
-  "bugs": {
-    "url": "https://github.com/jonathantneal/precss/issues"
+  "engines": {
+    "node": ">=4.0.0"
   },
-  "homepage": "https://github.com/jonathantneal/precss",
   "dependencies": {
     "postcss": "^6.0.3",
     "postcss-advanced-variables": "1.2.2",
@@ -50,17 +40,34 @@
     "postcss-selector-not": "^3.0.1"
   },
   "devDependencies": {
-    "eslint": "^1.7.3",
+    "eslint": "^4.1.1",
+    "eslint-config-dev": "2.0.0",
+    "fse": "^3.0.0",
+    "postcss-tape": "2.0.1",
+    "pre-commit": "^1.2.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.7.0"
   },
-  "scripts": {
-    "lint": "eslint . --ignore-path .gitignore",
-    "fixtures": "tape test/*.js | tap-spec",
-    "test": "npm run lint && npm run fixtures"
+  "eslintConfig": {
+    "extends": "dev"
   },
-  "engines": {
-    "iojs": ">=2.0.0",
-    "node": ">=0.12.0"
-  }
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "sass",
+    "variables",
+    "conditionals",
+    "ifs",
+    "thens",
+    "elses",
+    "fors",
+    "nesteds",
+    "nestings",
+    "eaches",
+    "mixins",
+    "imports",
+    "extends",
+    "placeholders"
+  ]
 }

@@ -82,8 +82,8 @@ var processors = [
 ];
 
 // load all plugins
-module.exports = postcss.plugin('precss', function (options) {
-	options = options || {};
+module.exports = postcss.plugin('precss', function (rawoptions) {
+	var options = rawoptions || {};
 
 	var instance = postcss();
 
