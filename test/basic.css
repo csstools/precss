@@ -1,0 +1,36 @@
+$blue: #056ef0;
+$column: 200px;
+$faded: true !default;
+
+@mixin times($multiply: 4) {
+	width: calc($multiply * $column);
+}
+
+%menu-link-options {
+	background: $blue;
+	height: @width;
+}
+
+.menu {
+	@include times;
+}
+
+.menu-link {
+	@include times(1);
+
+	@extend %menu-link-options;
+
+	&:any-link {
+		@if $faded {
+			background-color: color-mod($blue alpha(50%));
+		} @else {
+			background-color: $blue;
+
+			@at-root {
+				:root {
+					background-color: color-mod($blue alpha(2%));
+				}
+			}
+		}
+	}
+}

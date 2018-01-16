@@ -1,0 +1,13 @@
+.menu {
+	width: calc(4 * 200px);
+}
+
+.menu-link {
+	width: calc(1 * 200px);
+	background: #056ef0;
+	height: calc(1 * 200px)
+}
+
+.menu-link:link,.menu-link:visited {
+	background-color: rgba(5, 110, 240, 0.5);
+}
