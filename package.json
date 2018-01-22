@@ -1,0 +1,19 @@
+{
+  "name": "precss-codepen",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "browserify codepen.js | babel --presets=env | uglifyjs --compress --mangle > codepen.bundle.js; gzip-size codepen.bundle.js"
+  },
+  "dependencies": {
+    "browserslist": "^2.11",
+    "postcss": "^6.0",
+    "precss": "file:.."
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26",
+    "browserify": "^15.2",
+    "gzip-size-cli": "^2.1",
+    "uglify-js": "^3.3"
+  },
+  "private": true
+}
