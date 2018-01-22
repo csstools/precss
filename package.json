@@ -1,6 +1,6 @@
 {
   "name": "precss",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Use Sass-like markup and staged CSS features in CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

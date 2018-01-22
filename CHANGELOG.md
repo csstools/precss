@@ -1,5 +1,9 @@
 # Changes to PreCSS
 
+### 3.1.0 (Janaury 22, 2018)
+
+- Updated: PostCSS Preset Env 2.1 (major)
+
 ### 3.0.0 (Janaury 16, 2018)
 
 - Changed: Using PostCSS Advanced Variables instead of the following;
