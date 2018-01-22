@@ -1,8 +1,23 @@
 # Changes to PreCSS
 
-### 3.0.0 (June 29, 2017)
+### 3.0.0 (Janaury 16, 2018)
 
-- Completely rewritten
+- Changed: Using PostCSS Advanced Variables instead of the following;
+  - PostCSS Import
+  - PostCSS Mixins
+- Changed: Using PostCSS Preset Env instead of the following;
+  - PostCSS Color Function
+  - PostCSS Custom Media
+  - PostCSS Custom Properties
+  - PostCSS Custom Selectors
+  - PostCSS Media MinMax
+  - PostCSS Nesting
+  - PostCSS Selector Matches
+  - PostCSS Selector Not
+- Changed: Using PostCSS Extend Rule instead of PostCSS Extend
+- Updated: PostCSS Advanced Variables 2.3 (major)
+- Updated: PostCSS Property Lookup 2.0 (major)
+- Updated: PostCSS Nested 3.0 (major)
 
 ### 2.0.0 (January 6, 2018)
 
@@ -11,17 +26,17 @@
 
 ## 1.4.0 (October 24, 2015)
 
-- Added: At-Root 0.1.2
-- Added: Property Lookup 1.1.3
+- Added: PostCSS At-Root 0.1.2
+- Added: PostCSS Property Lookup 1.1.3
 - Updated: Tests and documentation
 
 ## 1.3.0 (October 21, 2015)
 
 - Updated: PostCSS 5.0.10 (patch)
-- Updated: Advanced Variables 1.2.2 (minor)
-- Updated: Extend 1.0.1 (minor)
-- Updated: Mixins 2.1.0 (major)
-- Updated: Nesting 2.0.6 (patch)
+- Updated: PostCSS Advanced Variables 1.2.2 (minor)
+- Updated: PostCSS Extend 1.0.1 (minor)
+- Updated: PostCSS Mixins 2.1.0 (major)
+- Updated: PostCSS Nesting 2.0.6 (patch)
 - Updated: Tests and documentation
 
 ## 1.2.3 (September 24, 2015)
