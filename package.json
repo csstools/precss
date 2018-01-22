@@ -30,7 +30,7 @@
     "postcss-atroot": "^0.1",
     "postcss-extend-rule": "^1.1",
     "postcss-nested": "^3.0",
-    "postcss-preset-env": "^2.0",
+    "postcss-preset-env": "^2.1",
     "postcss-property-lookup": "^2.0"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "babel-eslint": "^8.2",
     "babel-preset-env": "^1.6",
     "echint": "^4.0",
-    "eslint": "^4.15",
+    "eslint": "^4.16",
     "eslint-config-dev": "2.0",
     "postcss-tape": "2.2",
     "pre-commit": "^1.2",

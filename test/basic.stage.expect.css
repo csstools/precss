@@ -8,6 +8,6 @@
 	height: calc(1 * 200px);
 }
 
-.menu-link:link,.menu-link:visited {
+.menu-link:any-link {
 			background-color: color-mod(#056ef0 alpha(50%));
 }

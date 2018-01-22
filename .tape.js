@@ -14,7 +14,7 @@ module.exports = {
 		'basic:stage': {
 			message: 'supports { stage } usage',
 			options: {
-				stage: 3
+				stage: 4
 			}
 		}
 	}
