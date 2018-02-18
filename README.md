@@ -127,6 +127,17 @@ grunt.initConfig({
 });
 ```
 
+# Plugins
+
+PreCSS is powered by the following plugins (in this order):
+
+- [postcss-extend-rule](https://github.com/jonathantneal/postcss-extend-rule)
+- [postcss-advanced-variables](https://github.com/jonathantneal/postcss-advanced-variables)
+- [postcss-preset-env](https://github.com/jonathantneal/postcss-preset-env)
+- [postcss-atroot](https://github.com/OEvgeny/postcss-atroot)
+- [postcss-property-lookup](https://github.com/simonsmith/postcss-property-lookup)
+- [postcss-nested](https://github.com/postcss/postcss-nested)
+
 [npm-url]: https://www.npmjs.com/package/precss
 [npm-img]: https://img.shields.io/npm/v/precss.svg
 [cli-url]: https://travis-ci.org/jonathantneal/precss
