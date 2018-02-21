@@ -1,5 +1,9 @@
 # Changes to PreCSS
 
+### 3.1.1 (February 21, 2018)
+
+- Updated: Dependencies to latest working release (no major bumps)
+
 ### 3.1.0 (Janaury 22, 2018)
 
 - Updated: PostCSS Preset Env 2.1 (major)
