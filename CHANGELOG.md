@@ -1,5 +1,10 @@
 # Changes to PreCSS
 
+### 3.1.2 (February 27, 2018)
+
+- Updated: `postcss-advanced-variables` to v2.3.3 (patch)
+- Updated: `postcss-preset-env` to v3.2.2 (patch)
+
 ### 3.1.1 (February 21, 2018)
 
 - Updated: Dependencies to latest working release (no major bumps)
