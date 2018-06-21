@@ -8,6 +8,14 @@
 	height: calc(1 * 200px);
 }
 
+.menu-link:-webkit-any-link {
+			background-color: color-mod(#056ef0 alpha(50%));
+}
+
+.menu-link:-moz-any-link {
+			background-color: color-mod(#056ef0 alpha(50%));
+}
+
 .menu-link:any-link {
 			background-color: color-mod(#056ef0 alpha(50%));
 }
