@@ -9,17 +9,17 @@
 }
 
 .menu-link:link,.menu-link:visited {
-			background-color: color-mod(#056ef0 alpha(50%));
+			background-color: rgba(5, 110, 240, 0.5);
 }
 
 .menu-link:-webkit-any-link {
-			background-color: color-mod(#056ef0 alpha(50%));
+			background-color: rgba(5, 110, 240, 0.5);
 }
 
 .menu-link:-moz-any-link {
-			background-color: color-mod(#056ef0 alpha(50%));
+			background-color: rgba(5, 110, 240, 0.5);
 }
 
 .menu-link:any-link {
-			background-color: color-mod(#056ef0 alpha(50%));
+			background-color: rgba(5, 110, 240, 0.5);
 }

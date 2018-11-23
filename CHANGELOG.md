@@ -1,9 +1,17 @@
 # Changes to PreCSS
 
+### 4.0.0 (November 23, 2018)
+
+- Updated: `postcss` to 7.0.6 (major)
+- Updated: `postcss-advanced-variables` to 3.0.0 (major)
+- Updated: `postcss-extend-rule` to 2.0.0 (major)
+- Updated: `postcss-nested` to 4.1.0 (major)
+- Updated: `postcss-preset-env` to 6.4.0 (major)
+
 ### 3.1.2 (February 27, 2018)
 
-- Updated: `postcss-advanced-variables` to v2.3.3 (patch)
-- Updated: `postcss-preset-env` to v3.2.2 (patch)
+- Updated: `postcss-advanced-variables` to 2.3.3 (patch)
+- Updated: `postcss-preset-env` to 3.2.2 (patch)
 
 ### 3.1.1 (February 21, 2018)
 

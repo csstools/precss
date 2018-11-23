@@ -1,9 +1,8 @@
 # PreCSS [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS Logo" width="90" height="90" align="right">][postcss]
 
 [![NPM Version][npm-img]][npm-url]
-[![Linux Build Status][cli-img]][cli-url]
-[![Windows Build Status][win-img]][win-url]
-[![Gitter Chat][git-img]][git-url]
+[![Build Status][cli-img]][cli-url]
+[![Support Chat][git-img]][git-url]
 
 [PreCSS] lets you use Sass-like markup and staged CSS features in CSS.
 
@@ -16,11 +15,11 @@ $column: 200px;
 }
 
 .menu_link {
-  background: color-mod($blue alpha(90%));
+  background: $blue;
   width: $column;
 }
 
-/* after */
+/* becomes */
 
 .menu {
   width: calc(4 * 200px);
@@ -33,8 +32,8 @@ $column: 200px;
 ```
 
 PreCSS combines Sass-like syntactical sugar — like variables, conditionals, and
-iterators — with emerging CSS features — like color functions, logical
-and custom properties, media query ranges, and image sets.
+iterators — with emerging CSS features — like logical and custom properties,
+media query ranges, and image sets.
 
 ## Usage
 
@@ -138,16 +137,14 @@ PreCSS is powered by the following plugins (in this order):
 - [postcss-property-lookup](https://github.com/simonsmith/postcss-property-lookup)
 - [postcss-nested](https://github.com/postcss/postcss-nested)
 
-[npm-url]: https://www.npmjs.com/package/precss
-[npm-img]: https://img.shields.io/npm/v/precss.svg
+[cli-img]: https://img.shields.io/travis/jonathantneal/precss/master.svg
 [cli-url]: https://travis-ci.org/jonathantneal/precss
-[cli-img]: https://img.shields.io/travis/jonathantneal/precss.svg
-[win-url]: https://ci.appveyor.com/project/jonathantneal/precss
-[win-img]: https://img.shields.io/appveyor/ci/jonathantneal/precss.svg
-[git-url]: https://gitter.im/postcss/postcss
 [git-img]: https://img.shields.io/badge/chat-gitter-blue.svg
+[git-url]: https://gitter.im/postcss/postcss
+[npm-img]: https://img.shields.io/npm/v/precss.svg
+[npm-url]: https://www.npmjs.com/package/precss
 
-[PreCSS]: https://github.com/jonathantneal/precss
-[PostCSS]: https://github.com/postcss/postcss
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
+[PostCSS]: https://github.com/postcss/postcss
+[PreCSS]: https://github.com/jonathantneal/precss

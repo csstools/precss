@@ -9,33 +9,33 @@
 }
 
 :root {
-					background-color: rgba(5, 110, 240, 0.02);
+					background-color: color-mod(#056ef0 alpha(2%));
 				}
 
 .menu-link:link,.menu-link:visited {
-	background-color: #056ef0;
+			background-color: #056ef0;
 }
 
 :root {
-					background-color: rgba(5, 110, 240, 0.02);
+					background-color: color-mod(#056ef0 alpha(2%));
 				}
 
 .menu-link:-webkit-any-link {
-	background-color: #056ef0;
+			background-color: #056ef0;
 }
 
 :root {
-					background-color: rgba(5, 110, 240, 0.02);
+					background-color: color-mod(#056ef0 alpha(2%));
 				}
 
 .menu-link:-moz-any-link {
-	background-color: #056ef0;
+			background-color: #056ef0;
 }
 
 :root {
-					background-color: rgba(5, 110, 240, 0.02);
+					background-color: color-mod(#056ef0 alpha(2%));
 				}
 
 .menu-link:any-link {
-	background-color: #056ef0;
+			background-color: #056ef0;
 }
