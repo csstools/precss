@@ -126,6 +126,44 @@ grunt.initConfig({
 });
 ```
 
+## Options
+
+There are two ways to pass down options
+
+### Passing an option to all plugins
+
+Options provided without a plugin name specification will get passed down to all plugins will get applied for all supporting plugins eg. `stage: 0`
+
+#### Example for PostCSS
+
+```js
+import postcss from 'postcss';
+import precss from 'precss';
+
+postcss([
+  precss(
+    stage: 0,
+  )
+]).process(YOUR_CSS);
+```
+
+### Passing an option to only one plugin
+
+To make sure only one plugin uses an option and to avoid [collision with other plugins](https://github.com/jonathantneal/precss/issues/127#issuecomment-481900242) you can pass settings to a specific plugin by using its name in camelCase e.g. `postcss-extend-rule` becomes `postcssExtendRule`
+
+#### Example for PostCSS
+
+```js
+import postcss from 'postcss';
+import precss from 'precss';
+
+postcss([
+  precss({
+    postcssPresetEnv: {autoprefixer: { grid: true } }
+  })
+]).process(YOUR_CSS);
+```
+
 # Plugins
 
 PreCSS is powered by the following plugins (in this order):
