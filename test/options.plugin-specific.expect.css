@@ -1,0 +1,41 @@
+h1,h2,h3,h4,h5,h6 {
+	--brand-red: color-mod(yellow blend(red 50%))
+}
+
+@media (max-width: 50rem) {
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: 0
+}
+  }
+
+.autoplacement-example {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto 20px auto;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+}
+
+.autoplacement-example > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+}
+
+.autoplacement-example > *:nth-child(2) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 3;
+}
+
+.autoplacement-example > *:nth-child(3) {
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
+}
+
+.autoplacement-example > *:nth-child(4) {
+	-ms-grid-row: 3;
+	-ms-grid-column: 3;
+}
