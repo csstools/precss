@@ -1,0 +1,27 @@
+
+    .child {
+			color: red;
+  	}
+
+.parent {
+	background: green
+}
+
+h1,h2,h3,h4,h5,h6 {
+	--brand-red: color-mod(yellow blend(red 50%))
+}
+
+@media (max-width: 50rem) {
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: 0
+}
+  }
+
+.autoplacement-example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+}

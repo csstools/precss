@@ -8,14 +8,18 @@ import postcssPresetEnv from 'postcss-preset-env';
 import postcssPropertyLookup from 'postcss-property-lookup';
 
 // plugin chain
-const plugins = [
+const pluginsObj = {
 	postcssExtendRule,
 	postcssAdvancedVariables,
 	postcssPresetEnv,
 	postcssAtroot,
 	postcssPropertyLookup,
 	postcssNested
-];
+};
+
+// split plugins into key/value
+const plugins = Object.values(pluginsObj);
+const pluginKeys = Object.keys(pluginsObj);
 
 // plugin
 export default postcss.plugin('precss', rawopts => {
@@ -24,7 +28,37 @@ export default postcss.plugin('precss', rawopts => {
 
 	// initialize all plugins
 	const initializedPlugins = plugins.map(
-		plugin => plugin(opts)
+		(plugin, key) => {
+
+			let optionNames = Object.keys(opts);
+			let currentPluginName = pluginKeys[key];
+
+			//check if options specify current plugin
+			if(optionNames.includes(currentPluginName) ) {
+
+				let pluginSpecificOptions = opts[currentPluginName];
+
+				// check if plugin should be disabled
+				if (typeof pluginSpecificOptions.disable !== 'undefined' &&
+					pluginSpecificOptions.disable === true) {
+					delete opts[key];
+					return function() {};
+				}
+
+				//delete top-level option from opts
+				delete opts[currentPluginName];
+
+				//create new Object with all known options to top-level
+				let allPluginOpts = Object.assign({}, opts, pluginSpecificOptions );
+
+				//delete used-plugin key from opts (clean)
+				delete opts[key];
+
+				return plugin( allPluginOpts );
+			}
+			//default return all options for the plugin
+			return plugin(opts)
+		}
 	);
 
 	// process css with all plugins

@@ -24,6 +24,40 @@ module.exports = {
 			options: {
 				stage: 4
 			}
+		},
+		'options': {
+			message: 'supports passing no { options }'
+		},
+		'options:global': {
+			message: 'supports global { stage } usage ',
+			options: {
+				stage: false
+			}
+		},
+		'options:plugin-specific': {
+			message: 'supports passing grid and color-mod { options } to postcssPresetEnv only',
+			options: {
+				'postcssPresetEnv': {
+					features: {
+						'color-mod-function': false,
+					},
+					'autoprefixer': {
+						'grid': 'autoplace'
+					}
+
+				}
+			}
+		},
+		'options:disabled': {
+			message: 'supports disabling plugins',
+			options: {
+				features: {
+					'color-mod-function': true,
+				},
+				'postcssAtroot': {
+					'disable': true
+				}
+			}
 		}
 	}
 };
