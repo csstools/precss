@@ -38,13 +38,20 @@ export default postcss.plugin('precss', rawopts => {
 
 				let pluginSpecificOptions = opts[currentPluginName];
 
+				// check if plugin should be disabled
+				if (typeof pluginSpecificOptions.disable !== 'undefined' &&
+					pluginSpecificOptions.disable === true) {
+					delete opts[key];
+					return function() {};
+				}
+
 				//delete top-level option from opts
 				delete opts[currentPluginName];
 
 				//create new Object with all known options to top-level
 				let allPluginOpts = Object.assign({}, opts, pluginSpecificOptions );
 
-				//delete used-plugin key from opts
+				//delete used-plugin key from opts (clean)
 				delete opts[key];
 
 				return plugin( allPluginOpts );
