@@ -1,6 +1,14 @@
 @custom-media --viewport-medium (width <= 50rem);
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
+.child {
+			color: red;
+  	}
+
+.parent {
+	background: green
+}
+
 :--heading {
 	--brand-red: color-mod(yellow blend(red 50%));
 }

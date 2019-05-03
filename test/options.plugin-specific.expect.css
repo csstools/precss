@@ -1,3 +1,12 @@
+
+    .child {
+			color: red;
+  	}
+
+.parent {
+	background: green
+}
+
 h1,h2,h3,h4,h5,h6 {
 	--brand-red: color-mod(yellow blend(red 50%))
 }
@@ -21,21 +30,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .autoplacement-example > *:nth-child(1) {
-	-ms-grid-row: 1;
-	-ms-grid-column: 1;
+			-ms-grid-row: 1;
+			-ms-grid-column: 1;
 }
 
 .autoplacement-example > *:nth-child(2) {
-	-ms-grid-row: 1;
-	-ms-grid-column: 3;
+			-ms-grid-row: 1;
+			-ms-grid-column: 3;
 }
 
 .autoplacement-example > *:nth-child(3) {
-	-ms-grid-row: 3;
-	-ms-grid-column: 1;
+			-ms-grid-row: 3;
+			-ms-grid-column: 1;
 }
 
 .autoplacement-example > *:nth-child(4) {
-	-ms-grid-row: 3;
-	-ms-grid-column: 3;
+			-ms-grid-row: 3;
+			-ms-grid-column: 3;
 }

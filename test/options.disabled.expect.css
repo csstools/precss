@@ -1,6 +1,3 @@
-@custom-media --viewport-medium (width <= 50rem);
-@custom-selector :--heading h1, h2, h3, h4, h5, h6;
-
 .parent {
 	background: green;
   @at-root {
@@ -10,12 +7,17 @@
 	}
 }
 
-:--heading {
-	--brand-red: color-mod(yellow blend(red 50%));
-  @media (--viewport-medium) {
-    margin-block: 0;
-  }
+h1,h2,h3,h4,h5,h6 {
+	--brand-red: rgb(255, 128, 0)
 }
+
+@media (max-width: 50rem) {
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: 0
+}
+  }
 
 .autoplacement-example {
     display: grid;

@@ -32,7 +32,7 @@ module.exports = {
 			message: 'supports global { stage } usage ',
 			options: {
 				stage: false
-		}
+			}
 		},
 		'options:plugin-specific': {
 			message: 'supports passing grid and color-mod { options } to postcssPresetEnv only',
@@ -48,5 +48,16 @@ module.exports = {
 				}
 			}
 		},
+		'options:disabled': {
+			message: 'supports disabling plugins',
+			options: {
+				features: {
+					'color-mod-function': true,
+				},
+				'postcssAtroot': {
+					'disable': true
+				}
+			}
+		}
 	}
 };
