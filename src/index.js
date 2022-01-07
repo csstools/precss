@@ -1,5 +1,4 @@
 // tooling
-import postcss from 'postcss';
 import postcssAdvancedVariables from 'postcss-advanced-variables';
 import postcssAtroot from 'postcss-atroot';
 import postcssExtendRule from 'postcss-extend-rule';
@@ -18,7 +17,7 @@ const plugins = [
 ];
 
 // plugin
-export default postcss.plugin('precss', rawopts => {
+module.exports = ( rawopts ) => {
 	// initialize options, defaulting preset-env to stage 0 features
 	const opts = Object.assign({ stage: 0 }, rawopts);
 
@@ -34,4 +33,6 @@ export default postcss.plugin('precss', rawopts => {
 		),
 		Promise.resolve()
 	);
-});
+};
+
+module.exports.postcss = true;
