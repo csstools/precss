@@ -11,3 +11,5 @@ yarn.lock
 !.tape.js
 !.travis.yml
 !.github
+/index.js
+/index.mjs
